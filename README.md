@@ -55,4 +55,15 @@ Another way of getting your own local version to work on is to clone the reposit
 6. Then you want to type "git clone https://github.com/James-VT/MS3_Halo_Pizza", the same URL as before.
 7. Hit Enter. You're good to go!
 
+### Deploying to Heroku:
+Heroku allows us to host Python projects, instead of merely static sites which are all GitHub allows.
+1. Make an account with Heroku, if you don't already have one, here: https://www.heroku.com/
+2. After setting your password and/or logging in, you'll find yourself looking at the Heroku dashboard.
+3. You can click your chosen development language for some helpful tips and tutorials about how to use it with Heroku, if that'd help you.
+4. From the dashboard, click "Create new app."
+5. Enter a name for your app. It must be unique, and contain only letters, numbers and hyphens.
+6. Choose a region. In our case, Europe.
+7. Click "Create app."
+8. TODO
+
 ---
