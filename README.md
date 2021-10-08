@@ -24,7 +24,7 @@ This app serves to provide a space where users can log in to share their pizza r
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
 
-### Deploying a static project to GitHub pages:
+## Deploying a static project to GitHub pages:
  1. You'll need a GitHub account, if you don't already have one. Head to their site https://github.com and you'll see the sign-up links straightaway on the home page. Google Chrome is the recommended browser for GitHub.
  2. Once you're signed-up, this'll be your landing page.
  3. Click on the user icon in the top right corner of the screen. This opens a dropdown menu. Click "Your repositories."
@@ -55,8 +55,9 @@ Another way of getting your own local version to work on is to clone the reposit
 6. Then you want to type "git clone https://github.com/James-VT/MS3_Halo_Pizza", the same URL as before.
 7. Hit Enter. You're good to go!
 
-### Deploying to Heroku:
+## Deploying to Heroku:
 Heroku allows us to host Python projects, instead of merely static sites which are all GitHub allows.
+### Create your Heroku app
 1. Make an account with Heroku, if you don't already have one, here: https://www.heroku.com/
 2. After setting your password and/or logging in, you'll find yourself looking at the Heroku dashboard.
 3. You can click your chosen development language for some helpful tips and tutorials about how to use it with Heroku, if that'd help you.
@@ -65,6 +66,16 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 6. Choose a region. In our case, Europe.
 7. Click "Create app."
 8. Return to your development environment and type, in the terminal "npm install -g heroku"
-9. npm is an abbreviation of "Node Package Manager" and "-g" tells the console that you want to 
+9. npm is an abbreviation of "Node Package Manager" and "-g" tells the console that this will be a global installation.
+10. You can now log in to heroku via the CLI at any time by typing heroku login -i and entering your credentials.
+11. You can now click "Open app" on your app's page on heroku to confirm that your app is up and running. Congratulations!
+
+### Connect your Git repository to Heroku
+
+
+
+### Create your "requirements.txt" file
+
+### Create your Heroku "Procfile"
 
 ---
