@@ -64,6 +64,7 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 5. Enter a name for your app. It must be unique, and contain only letters, numbers and hyphens.
 6. Choose a region. In our case, Europe.
 7. Click "Create app."
-8. TODO
+8. Return to your development environment and type, in the terminal "npm install -g heroku"
+9. npm is an abbreviation of "Node Package Manager" and "-g" tells the console that you want to 
 
 ---
