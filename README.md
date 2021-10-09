@@ -71,11 +71,24 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 11. You can now click "Open app" on your app's page on heroku to confirm that your app is up and running. Congratulations!
 
 ### Connect your Git repository to Heroku
-
+1. Head back to your app's page on the Heroku dashboard.
+2. Click settings.
+3. Grab the Heroku git URL
+4. In the console, type "git remote add [your choice of name here; I went with heroku] [your Heroku git url here]".
+5. To make sure this has worked, you can then type "git remote -v" to view what should now be both your git remotes and your heroku ones.
 
 
 ### Create your "requirements.txt" file
+1. Heroku uses this to detect which language we're using, and our dependencies.
+2. The way to create the requirements.txt file is to type, in the console: pip3 freeze --local > requirements.txt
+3. Wait for Heroku to install what it needs. After this, it will now be deployed to Heroku, but if you try to open it there now, you'll see an error. There's one more thing to do.
 
 ### Create your Heroku "Procfile"
+1. A Procfile is a specific file Heroku needs in order to know how to run our project.
+2. To create it, redirect an echo command by typing "echo web: python run.py > Procfile". The capital P is crucial.
+3. git add this, commit it, and finally git push it.
+4. Well done!
+
+### TODO: secret keys for heroku
 
 ---
