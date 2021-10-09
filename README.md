@@ -89,6 +89,10 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 3. git add this, commit it, and finally git push it.
 4. Well done!
 
-### TODO: secret keys for heroku
+### Set up your env.py file for your environment variables.
+1. Make sure you create a .gitignore file if you haven't already, and add the file you'll use for your environment variables into it.
+2. The convention for the file holding your environment variables is env.py
+3. In env.py, you can place your IP, PORT, any secret keys etc.
+4. Crucially, you can also set up the links between your project and MongoDB here as well, by adding the key-value pairs to connect to your Mongo database.
 
 ---
