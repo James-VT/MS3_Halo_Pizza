@@ -77,7 +77,6 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 4. In the console, type "git remote add [your choice of name here; I went with heroku] [your Heroku git url here]".
 5. To make sure this has worked, you can then type "git remote -v" to view what should now be both your git remotes and your heroku ones.
 
-
 ### Create your "requirements.txt" file
 1. Heroku uses this to detect which language we're using, and our dependencies.
 2. The way to create the requirements.txt file is to type, in the console: pip3 freeze --local > requirements.txt
@@ -93,6 +92,12 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 1. Make sure you create a .gitignore file if you haven't already, and add the file you'll use for your environment variables into it.
 2. The convention for the file holding your environment variables is env.py
 3. In env.py, you can place your IP, PORT, any secret keys etc.
-4. Crucially, you can also set up the links between your project and MongoDB here as well, by adding the key-value pairs to connect to your Mongo database.
+4. Crucially, you can also set up the links between your project and MongoDB here as well, by adding the key-value pairs to connect to your Mongo database. Make sure you've installed flask-pymongo and dnspython to allow your Flask application to work with MongoDB.
+
+### Enter your environment variables into Heroku's config vars.
+1. On your project's Heroku page, go to settings and scroll down to "config vars"
+2. Here you can add the information in your env.py file to your Heroku project. The reason you need to do this is that your env.py file, which is listed in your .gitignore, is not pushed to Heroku or GitHub. As such, Heroku does not have access to the information contained within it, which is vital to the running of the project.
+3. Add those environment variables in config vars as key-value pairs.
+4. You should now be able to open your project via the "Open app" button.
 
 ---
