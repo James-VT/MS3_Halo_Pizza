@@ -8,7 +8,13 @@
 </head>
 <body>
     
-    <h1>Hello, world!</h1>
+    {% for recipe in recipes %}
+        {{ recipe.pizza_name }}<br>
+        {{ recipe.category_name }}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
+        <img src="{{ recipe.image_url }}"><br>
+    {% endfor %}
 
 </body>
 </html>
