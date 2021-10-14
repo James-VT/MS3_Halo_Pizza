@@ -30,7 +30,15 @@ The colour palette for this project was generated using Coolors (credited in the
 ![Coolors palette for Halo Pizza](docs/coolors.png)
 
 ### Wheat, Venetian Red, Pakistan Green:
-These three were chosen to loosely resemble colours associated with pizza.
+These three were chosen to loosely resemble colours associated with pizza. Although they aren't exact matches for pizza dough, passata or green peppers I've chosen them as much for contrast and continuity with each other as I have for accuracy.
+
+### Eerie Black:
+This will be our font colour, though where necessity dictates default black can be used, particularly if displaying text over the last colour.
+
+### Dark Sienna:
+Dark Sienna will be our back-up colour, and a bit of a wildcard option. Coolors suggested it as an accompaniment for the other four, and as it loosely fits the pizza theme, I include it here as a potential element.
+
+---
 
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
