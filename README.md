@@ -101,3 +101,34 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 4. You should now be able to open your project via the "Open app" button.
 
 ---
+
+## Credits
+
+### Technologies used
+
+* Languages:
+    * [HTML5](https://en.wikipedia.org/wiki/HTML5) was used for the content and structure of the site.
+    * [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3) was used for the styling of the site.
+    * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used for the interactivity of the site.
+
+* [Balsamiq](https://balsamiq.com/)
+    * Balsamiq was used to create the wireframes for this project. 
+
+* [Git](https://git-scm.com/)
+    * Git was used for version control and saving work in the repository, using the GitPod extension in Google Chrome to commit to GitHub.
+
+* [Chrome](https://www.google.com/intl/en_uk/chrome/)
+    * This project was created in the Google Chrome browser, and as such Chrome was used as the default testing browser.
+
+* [Google Fonts](https://fonts.google.com/)
+    * The fonts for the site were imported from Google Fonts.
+
+*  [FontAwesome](https://fontawesome.com/)
+    * The icons for social media links were taken from FontAwesome.
+
+* [Coolors](https://coolors.co/)
+    * The colour palette for this site was chosen using Coolors.
+
+* [RandomKeygen](https://randomkeygen.com/)
+    * RandomKeygen is a free online service for generating passwords with optional levels of security, and was used in this project to generate a password for our environment variables.
+
