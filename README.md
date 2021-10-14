@@ -151,3 +151,16 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [RandomKeygen](https://randomkeygen.com/)
     * RandomKeygen is a free online service for generating passwords with optional levels of security, and was used in this project to generate a password for our environment variables.
 
+---
+
+## External libraries
+
+* [JQuery](https://jquery.com/download/#using-jquery-with-a-cdn)
+    * JQuery is used in this project via CDN to provide the option of simplifying JavaScript code.
+* Why JQuery?
+    * The benefit of JQuery is that it allows a developer to use JavaScript functionality without the verbosity of writing pure JavaScript.
+
+* [Materialize](https://materializecss.com/)
+    * Materialize was used for some HTML component templates and CSS styling.
+* Why Materialize?
+    * Materialize provides out-of-the-box features which make certain commonly-found features of web design quick and easy.
