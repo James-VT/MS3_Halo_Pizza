@@ -21,6 +21,17 @@ This app serves to provide a space where users can log in to share their pizza r
 
 ---
 
+# UX
+
+## Colour palette
+
+The colour palette for this project was generated using Coolors (credited in the Technologies Used section below).
+
+![Coolors palette for Halo Pizza](docs/coolors.png)
+
+### Wheat, Venetian Red, Pakistan Green:
+These three were chosen to loosely resemble colours associated with pizza.
+
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
 
