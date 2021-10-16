@@ -1,3 +1,28 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+/* ------------------Header */
 .navbar-style {
     background-color: #c2211e;
+}
+
+.icon-style {
+    font-size: 40px;
+}
+
+/* ------------------Footer */
+
+.page-footer {
+    background-color: #c2211e;
+}
+
+.social-links {
+    display: inline-block;
 }
