@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The below code adds Materialize CSS to the project -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <!--The below code adds FontAwesome to the project-->
+    <script src="https://kit.fontawesome.com/17b09219bc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -16,24 +18,31 @@
     <header>
         <!--Navbar header-->
         <!--This navbar is a Materialize component, swiped from here: https://materializecss.com/navbar.html-->
-        <nav>
+        <nav class="nav-extended navbar-style">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#!" class="brand-logo">Halo Pizza</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Submit a recipe</a></li>
+                    <li><a href="#">Manage collections</a></li>
+                    <li><a href="#">Log out</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Create account</a></li>
                 </ul>
             </div>
         </nav>
         <!--The below sidenav is part of the navbar above, and pinched from the same place-->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+            <li><h3>Halo Pizza</h3></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Submit a recipe</a></li>
+            <li><a href="#">Manage collections</a></li>
+            <li><a href="#">Log out</a></li>
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Create account</a></li>
         </ul>
     </header>
 
