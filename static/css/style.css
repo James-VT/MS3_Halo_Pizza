@@ -11,7 +11,11 @@ main {
 
 /* ------------------Header */
 .navbar-style {
-    background-color: #c2211e;
+    background-color: #F3D9A5;
+}
+
+.navbar-text {
+    color: #191919;
 }
 
 .icon-style {
@@ -21,18 +25,30 @@ main {
 .logo-style {
     font-family: 'Dela Gothic One', cursive;
     margin-left: 20px;
+    color: #191919;
+    font-size: 20px;
 }
 
 /* ------------------Footer */
 
 .page-footer {
-    background-color: #c2211e;
+    background-color: #F3D9A5;
+    color: #191919;
 }
 
 .social-links {
     display: inline-block;
     padding-left: 15px;
     padding-right: 15px;
+    color: #191919;
+}
+
+.social-links-color {
+    color: #191919;
+}
+
+.copyright-div {
+    background-color: rgba(0, 0, 0, 0.1)
 }
 
 /* ------------------Media queries */

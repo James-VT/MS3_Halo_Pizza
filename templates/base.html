@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!--The below code adds FontAwesome to the project-->
     <script src="https://kit.fontawesome.com/17b09219bc.js" crossorigin="anonymous"></script>
+    <!--The following three lines add Google Fonts to the project-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Halo Pizza</title>
+    <title>Halo Pizza Club</title>
 </head>
 <body>
     
@@ -22,17 +23,17 @@
         <!--Navbar header-->
         <!--This navbar is a Materialize component, swiped from here: https://materializecss.com/navbar.html-->
         <nav class="nav-extended navbar-style">
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo logo-style">Halo Pizza</a>
+            <div class="nav-wrapper navbar-text">
+                <a href="#!" class="logo-style">Halo Pizza Club</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Submit a recipe</a></li>
-                    <li><a href="#">Manage collections</a></li>
-                    <li><a href="#">Log out</a></li>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Create account</a></li>
+                    <li><a href="#" class="navbar-text">Home</a></li>
+                    <li><a href="#" class="navbar-text">Profile</a></li>
+                    <li><a href="#" class="navbar-text">Submit a recipe</a></li>
+                    <li><a href="#" class="navbar-text">Manage collections</a></li>
+                    <li><a href="#" class="navbar-text">Log out</a></li>
+                    <li><a href="#" class="navbar-text">Log in</a></li>
+                    <li><a href="#" class="navbar-text">Create account</a></li>
                 </ul>
             </div>
         </nav>
@@ -63,16 +64,16 @@
                         content.</p>
                 </div> -->
                 <div class="col s4 offset-s4">
-                    <h5 class="white-text center-align">Find us on social media</h5>
+                    <h5 class="center-align">Find us on social media</h5>
                     <ul class="center-align">
-                        <li class="social-links center-align"><a class="grey-text text-lighten-3 fab fa-facebook icon-style" href="#!"></a></li>
-                        <li class="social-links center-align"><a class="grey-text text-lighten-3 fab fa-twitter-square icon-style" href="#!"></a></li>
-                        <li class="social-links center-align"><a class="grey-text text-lighten-3 fab fa-instagram-square icon-style" href="#!"></a></li>
+                        <li class="social-links center-align"><a class="fab fa-facebook icon-style social-links-color" href="#!"></a></li>
+                        <li class="social-links center-align"><a class="fab fa-twitter-square icon-style social-links-color" href="#!"></a></li>
+                        <li class="social-links center-align"><a class="text-lighten-3 fab fa-instagram-square icon-style social-links-color" href="#!"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
+        <div class="copyright-div">
             <div class="container">
                 <p class="center-align">© 2021 Halo Pizza</p>
             </div>
