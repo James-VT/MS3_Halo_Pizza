@@ -17,6 +17,10 @@ main {
     font-size: 40px;
 }
 
+.logo-style {
+    margin-left: 20px;
+}
+
 /* ------------------Footer */
 
 .page-footer {
@@ -25,4 +29,13 @@ main {
 
 .social-links {
     display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ------------------Media queries */
+@media screen and (max-width: 810px) {
+    .social-links {
+        padding-top: 10px;
+    }
 }
