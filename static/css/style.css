@@ -29,6 +29,12 @@ main {
     font-size: 20px;
 }
 
+/* ------------------Sidenav */
+
+.sidenav-trigger-btn {
+    color: #191919;
+}
+
 /* ------------------Footer */
 
 .page-footer {
