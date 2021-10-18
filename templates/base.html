@@ -24,10 +24,10 @@
         <!--This navbar is a Materialize component, swiped from here: https://materializecss.com/navbar.html-->
         <nav class="nav-extended navbar-style">
             <div class="nav-wrapper navbar-text">
-                <a href="#!" class="logo-style">Halo Pizza Club</a>
+                <a href="{{ url_for('get_recipes') }}" class="logo-style">Halo Pizza Club</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger sidenav-trigger-btn"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#" class="navbar-text">Home</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}" class="navbar-text">Home</a></li>
                     <li><a href="#" class="navbar-text">Profile</a></li>
                     <li><a href="#" class="navbar-text">Submit a recipe</a></li>
                     <li><a href="#" class="navbar-text">Manage collections</a></li>
@@ -40,7 +40,7 @@
         <!--The below sidenav is part of the navbar above, and pinched from the same place-->
         <ul class="sidenav" id="mobile-demo">
             <li><h3 class="logo-style center-align">Halo Pizza Club</h3></li>
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Submit a recipe</a></li>
             <li><a href="#">Manage collections</a></li>
@@ -55,14 +55,10 @@
         {% endblock %}
     </main>
 
+    <!--The footer below is -->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-                <!-- <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                        content.</p>
-                </div> -->
                 <div class="col s4 offset-s4">
                     <h5 class="center-align">Find us on social media</h5>
                     <ul class="center-align">
