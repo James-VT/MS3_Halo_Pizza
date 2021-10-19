@@ -34,9 +34,35 @@ def get_recipes():
     return render_template("home.html", recipes=recipes)
 
 
-#The below route function  is for our registration page
+# The below route function  is for our registration page
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+
+        # Here we check if the username exists already in db
+        # Everything in db stored in lower case, hence lower() method.
+        # existing_user will come back with a truthy value if
+        # it finds a username that matches the one entered
+
+        existing_user = mongo.db.user.find_one(
+            {"username": request.form.get("username").lower()})
+
+# Checks if existing_user is truthy, which it will be if the
+# username already exists. Then, if it does, it will redirect
+# the user back to the register page to try again -
+# basically just resetting the page
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+
+
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_has(request.form.get("password"))
+            }
+
     return render_template("register.html")
 
 
