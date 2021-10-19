@@ -38,30 +38,39 @@ def get_recipes():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-
         # Here we check if the username exists already in db
         # Everything in db stored in lower case, hence lower() method.
         # existing_user will come back with a truthy value if
         # it finds a username that matches the one entered
-
         existing_user = mongo.db.user.find_one(
             {"username": request.form.get("username").lower()})
 
 # Checks if existing_user is truthy, which it will be if the
 # username already exists. Then, if it does, it will redirect
 # the user back to the register page to try again -
-# basically just resetting the page
+# basically just resetting the page.
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
-
+# The below gathers the data entered into the form by the user,
+# and stores it in the "register" variable as a dictionary.
+# This acts as an "else" for the "if" above.
 
             register = {
                 "username": request.form.get("username").lower(),
-                "password": generate_password_has(request.form.get("password"))
+                "password": generate_password_hash(
+                    request.form.get("password"))
             }
+            # The below goes into the users collection
+            # within MongoDB and, since we declared the
+            # register variable with the user's input made into
+            # a dictionary above, all we need to is drop that
+            # variable into it with the insert_one() method.
+            mongo.db.users.insert_one(register)
+
+            # Puts our new user into "session" cookie
 
     return render_template("register.html")
 
