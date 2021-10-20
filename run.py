@@ -34,7 +34,7 @@ def get_recipes():
     return render_template("home.html", recipes=recipes)
 
 
-# The below route function  is for our registration page
+# The below route function is for our registration page
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -42,7 +42,7 @@ def register():
         # Everything in db stored in lower case, hence lower() method.
         # existing_user will come back with a truthy value if
         # it finds a username that matches the one entered
-        existing_user = mongo.db.user.find_one(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
 # Checks if existing_user is truthy, which it will be if the
@@ -71,6 +71,8 @@ def register():
             mongo.db.users.insert_one(register)
 
             # Puts our new user into "session" cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Congratulations, you are now registered!")
 
     return render_template("register.html")
 
