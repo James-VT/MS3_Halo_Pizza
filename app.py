@@ -58,21 +58,21 @@ def register():
 # and stores it in the "register" variable as a dictionary.
 # This acts as an "else" for the "if" above.
 
-            register = {
-                "username": request.form.get("username").lower(),
-                "password": generate_password_hash(
-                    request.form.get("password"))
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(
+                request.form.get("password"))
             }
-            # The below goes into the users collection
-            # within MongoDB and, since we declared the
-            # register variable with the user's input made into
-            # a dictionary above, all we need to is drop that
-            # variable into it with the insert_one() method.
-            mongo.db.users.insert_one(register)
+        # The below goes into the users collection
+        # within MongoDB and, since we declared the
+        # register variable with the user's input made into
+        # a dictionary above, all we need to is drop that
+        # variable into it with the insert_one() method.
+        mongo.db.users.insert_one(register)
 
-            # Puts our new user into "session" cookie
-            session["user"] = request.form.get("username").lower()
-            flash("Congratulations, you are now registered!")
+        # Puts our new user into "session" cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Congratulations, you are now registered!")
 
     return render_template("register.html")
 
