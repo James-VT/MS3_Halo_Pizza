@@ -32,7 +32,7 @@
                     <li><a href="#" class="navbar-text">Submit a recipe</a></li>
                     <li><a href="#" class="navbar-text">Manage collections</a></li>
                     <li><a href="#" class="navbar-text">Log out</a></li>
-                    <li><a href="#" class="navbar-text">Log in</a></li>
+                    <li><a href="{{ url_for('login') }}" class="navbar-text">Log in</a></li>
                     <li><a href="{{ url_for('register') }}" class="navbar-text">Create account</a></li>
                 </ul>
             </div>
@@ -45,7 +45,7 @@
             <li><a href="#">Submit a recipe</a></li>
             <li><a href="#">Manage collections</a></li>
             <li><a href="#">Log out</a></li>
-            <li><a href="#">Log in</a></li>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
             <li><a href="{{ url_for('register') }}">Create account</a></li>
         </ul>
     </header>
