@@ -106,7 +106,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    flash("You have been logged out")
+    flash("You have logged out. See you soon!")
     session.pop("user")
     return redirect(url_for("login"))
 

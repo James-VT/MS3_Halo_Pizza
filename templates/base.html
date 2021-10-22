@@ -28,12 +28,14 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger sidenav-trigger-btn"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}" class="navbar-text">Home</a></li>
-                    <li><a href="#" class="navbar-text">Profile</a></li>
-                    <li><a href="#" class="navbar-text">Submit a recipe</a></li>
-                    <li><a href="#" class="navbar-text">Manage collections</a></li>
-                    <li><a href="#" class="navbar-text">Log out</a></li>
-                    <li><a href="{{ url_for('login') }}" class="navbar-text">Log in</a></li>
-                    <li><a href="{{ url_for('register') }}" class="navbar-text">Create account</a></li>
+                    {% if session.user %}
+                        <li><a href="#" class="navbar-text">Submit a recipe</a></li>
+                        <li><a href="#" class="navbar-text">Manage collections</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="navbar-text">Log out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}" class="navbar-text">Log in</a></li>
+                        <li><a href="{{ url_for('register') }}" class="navbar-text">Create account</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -41,12 +43,14 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h3 class="logo-style center-align">Halo Pizza Club</h3></li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Submit a recipe</a></li>
-            <li><a href="#">Manage collections</a></li>
-            <li><a href="#">Log out</a></li>
-            <li><a href="{{ url_for('login') }}">Log in</a></li>
-            <li><a href="{{ url_for('register') }}">Create account</a></li>
+            {% if session.user %}
+                <li><a href="#">Submit a recipe</a></li>
+                <li><a href="#">Manage collections</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+                <li><a href="{{ url_for('register') }}">Create account</a></li>
+            {% endif %}
         </ul>
     </header>
 
