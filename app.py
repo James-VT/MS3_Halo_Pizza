@@ -104,6 +104,14 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/account/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("account.html", username=username)
+
+
 @app.route("/logout")
 def logout():
     flash("You have logged out. See you soon!")
