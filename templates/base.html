@@ -29,6 +29,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}" class="navbar-text">Home</a></li>
                     {% if session.user %}
+                        <li><a href="{{ url_for('account', username=session['user']) }}">Account</li>
                         <li><a href="#" class="navbar-text">Submit a recipe</a></li>
                         <li><a href="#" class="navbar-text">Manage collections</a></li>
                         <li><a href="{{ url_for('logout') }}" class="navbar-text">Log out</a></li>
@@ -44,6 +45,7 @@
             <li><h3 class="logo-style center-align">Halo Pizza Club</h3></li>
             <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
             {% if session.user %}
+                <li><a href="{{ url_for('account', username=session['user']) }}">Account</li>
                 <li><a href="#">Submit a recipe</a></li>
                 <li><a href="#">Manage collections</a></li>
                 <li><a href="{{ url_for('logout') }}">Log out</a></li>
