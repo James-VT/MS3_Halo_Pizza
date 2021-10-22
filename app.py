@@ -85,8 +85,22 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # Ensure hashed password matches user input
-            if check_password_hash()
+            # This ensures hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome back, {}".format(
+                        request.form.get("username")))
+            else:
+                # This is for an invalid password match
+                flash("Incorrect username and/or password")
+                return redirect(url_for("login"))
+
+        else:
+            # This is for a username not existing
+            flash("Incorrect username and/or password")
+            return redirect(url_for("login"))
+            
     return render_template("login.html")
 
 
