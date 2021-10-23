@@ -56,3 +56,17 @@ Success!
 
 ---
 
+## Bugs
+
+### Navbar on two lines - FIXED
+
+At some point working on the base.html file, the various page links found themselves on two lines, as seen below:
+
+![Navbar links on two lines](docs/testing/bugs/navbarbug.png)
+
+* Finding a solution:
+    * After trying out various methods such as altering the padding on each list element, and removing styling from the brand logo, I eventually spotted the missing closing </a> tag on the Account link. Below is the offending line of code, with the closing tag ammended.
+
+```
+<li><a href="{{ url_for('account', username=session['user']) }}" class="navbar_text">Account</a></li>
+```
