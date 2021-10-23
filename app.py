@@ -102,7 +102,7 @@ def login():
             # This is for a username not existing
             flash("Incorrect username and/or password")
             return redirect(url_for("login"))
-          
+        
     return render_template("login.html")
 
 
