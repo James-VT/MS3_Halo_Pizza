@@ -1,5 +1,7 @@
 # Halo Pizza
 
+https://james-vt.github.io/MS3_Halo_Pizza/
+
 # Project overview
 This app serves to provide a space where users can log in to share their pizza recipes, view other users' submitted recipes, and edit recipes they have submitted. The site requires users to log in to submit and edit recipes, and features authentication to securely facilitate this.
 
