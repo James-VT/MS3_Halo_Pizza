@@ -30,7 +30,11 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    # The list of recipes coming from mongodb is not
+    # a true list, simply a Mongo Cursor Object. If
+    # we wrap the entire find method in a Python list()
+    # we turn it into a proper list.
+    recipes = list(mongo.db.recipes.find())
     return render_template("home.html", recipes=recipes)
 
 

@@ -4,26 +4,21 @@
     <h2>I'm extending the base template!</h2>
 
     {% for recipe in recipes %}
-        {{ recipe.pizza_name }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-        <img src="{{ recipe.image_url }}"><br>
-    {% endfor %}
-
-<div class="row">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <img src="images/sample-1.jpg">
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="fas fa-pizza-slice"></i></a>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ recipe.image_url }}">
+                    <span class="card-title">{{ recipe.pizza_name }}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light"><i class="fas fa-pizza-slice pizza-button"></i></a>
+                </div>
+                <div class="card-content">
+                    <strong>{{ recipe.category_name }}</strong>
+                    <p>{{ recipe.short_description }}</p>
+                </div>
+            </div>
         </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
     </div>
-  </div>
+    {% endfor %}
 
 {% endblock %}
