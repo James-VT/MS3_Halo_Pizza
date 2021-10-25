@@ -8,13 +8,49 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="pizza_icon" type="text" class="validate">
-                    <label for="pizza_icon">Pizza name</label>
+                    <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
+                    <input id="pizza_name" name="pizza_name" minlength="4" maxlength="50" type="text" class="validate" required>
+                    <label for="pizza_name">Pizza name</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-feather-alt prefix"></i>
-                    <input id="feather-icon" type="tel" class="validate">
-                    <label for="feather-icon">Short description</label>
+                    <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
+                    <textarea id="short_description" name="short_description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="short_description">Short description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <div class="switch">
+                        <i class="fas fa-egg prefix"></i>
+                        <label for="is_vegetarian">
+                            <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+                            <span class="lever"></span>
+                            Vegetarian
+                        </label>
+                    </div>
+                </div>
+                <div class="input-field col s4">
+                    <div class="switch">
+                        <i class="fas fa-seedling prefix"></i>
+                        <label for="is_vegan">
+                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                            <span class="lever"></span>
+                            Vegan
+                        </label>
+                    </div>
+                </div>
+                <div class="input-field col s4">
+                    <div class="switch">
+                        <i class="fas fa-bread-slice prefix"></i>
+                        <label for="is_gluten-free">
+                            <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
+                            <span class="lever"></span>
+                            Gluten free
+                        </label>
+                    </div>
                 </div>
             </div>
         </form>
