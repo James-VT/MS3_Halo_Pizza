@@ -136,6 +136,8 @@ def add_recipe():
             "short_description": request.form.get("short_description"),
             "category_name": request.form.getlist("category_name"),
             "is_vegetarian": is_vegetarian,
+            "is_vegan": is_vegan,
+            "is_gluten_free": is_gluten_free,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
