@@ -70,3 +70,34 @@ At some point working on the base.html file, the various page links found themse
 ```
 <li><a href="{{ url_for('account', username=session['user']) }}" class="navbar_text">Account</a></li>
 ```
+Problem solved!
+---
+
+### New ingredient fields failing to appear dynamically on button press
+
+The page for a user to submit a recipe had an issue with the field for each new ingredient failing to generate when clicked by a user.
+
+![Proto-version of add recipe form, with only one ingredient field](docs/testing/bugs/ingredientbuttonbug.png)
+
+The "Add ingredient" button was registering the click, but no new field was created. The console revealed this:
+
+```
+Uncaught TypeError: Failed to execute 'setAttribute' on 'Element': 2 arguments required, but only 1 present.
+    at HTMLButtonElement.next_ingredient_button.onclick (script.js:19)
+```
+
+Line 19 in script.js revealed the following (line 19 found within the next_ingredient_button.onclick function):
+```
+nextIngredient.setAttribute('required');
+```
+
+So setAttribute was expecting every method to be, essentially, a key:value pair such as ("type", "text"). I wasn't sure how to procede with this, as within the line of HTML for a required form element such as this, one simply puts "required."
+
+* Finding a solution:
+    * Inevitably, I ended up on StackOverflow for this one. Specifically, this thread: https://stackoverflow.com/questions/18770369/how-to-set-html5-required-attribute-in-javascript
+    * In that thread, they are discussing something slightly different but what set the lightbulb off for me was learning that the "required" attribute is actually a Boolean. Thus, what I should've typed was:
+
+```
+nextIngredient.setAttribute('required', 'true');
+```
+This solved the problem.
