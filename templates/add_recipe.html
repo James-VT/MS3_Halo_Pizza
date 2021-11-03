@@ -8,16 +8,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <input id="pizza_name" name="pizza_name" minlength="4" maxlength="50" type="text" class="validate" required>
+                    <input id="pizza_name" name="pizza_name" minlength="4" type="text" class="validate" required>
                     <label for="pizza_name">Pizza name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-feather-alt prefix"></i>
-                    <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <textarea id="short_description" name="short_description" minlength="5" maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <textarea id="short_description" name="short_description" minlength="5" class="materialize-textarea validate" required></textarea>
                     <label for="short_description">Short description</label>
                 </div>
             </div>
@@ -38,7 +36,7 @@
                     <i class="fas fa-clipboard-list prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
                     <textarea id="preparation" name="preparation" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
-                    <label for="preparation">Cooking instructions. Remember to include all required steps and how long it needs in the oven.</label>
+                    <label for="preparation">Cooking instructions</label>
                 </div>
             </div>
             <!--Image URL-->
@@ -47,7 +45,7 @@
                     <i class="fas fa-camera-retro prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
                     <input id="image-url" name="image-url" type="text" class="validate" value="https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg" required>
-                    <label for="image-url">Image URL. Below is a placeholder image URL in case you do not have one for your recipe.</label>
+                    <label for="image-url">Image URL</label>
                 </div>
             </div>
             <!--Category options-->
@@ -56,7 +54,7 @@
                     <i class="fas fa-folder-open prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
                     <select multiple id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled>Select one or more categories for your pizza recipe</option>
+                        <option value="" disabled>Select one or more</option>
                         {% for category in categories %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
@@ -65,7 +63,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s3">
+                <div class="input-field col m6 s12">
                     <div class="switch">
                         <i class="fas fa-egg prefix"></i>
                         <label for="is_vegetarian">
@@ -75,7 +73,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col m6 s12">
                     <div class="switch">
                         <i class="fas fa-seedling prefix"></i>
                         <label for="is_vegan">
@@ -85,7 +83,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col m6 s12">
                     <div class="switch">
                         <i class="fas fa-bread-slice prefix"></i>
                         <label for="is_gluten_free">
@@ -95,7 +93,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col m6 s12">
                     <div class="switch">
                         <i class="fas fa-cheese prefix"></i>
                         <label for="is_dairy_free">
