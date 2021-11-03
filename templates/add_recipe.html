@@ -3,7 +3,7 @@
 
     <h1 class="center-align">Upload your recipe</h1>
 
-    <div class="row">
+    <div class="row" id="ingredient-upload-form">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <div class="row">
                 <div class="input-field col s12">
@@ -22,9 +22,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12" id="ingredient-section">
                     <i class="fas fa-pepper-hot prefix"></i>
-                    <input id="ingredients" name="ingredients" type="text" class="validate" minlength="4" required>
+                    <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" required>
                     <label for="ingredients">Ingredients</label>
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
