@@ -131,13 +131,16 @@ def add_recipe():
         is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
         is_vegan = "on" if request.form.get("is_vegan") else "off"
         is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
+        is_dairy_free = "on" if request.form.get("is_dairy_free") else "off"
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
             "short_description": request.form.get("short_description"),
             "category_name": request.form.getlist("category_name"),
+            "ingredients": request.form.getlist("ingredients"),
             "is_vegetarian": is_vegetarian,
             "is_vegan": is_vegan,
             "is_gluten_free": is_gluten_free,
+            "is_dairy_free": is_dairy_free,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
