@@ -28,8 +28,17 @@
                     <label for="ingredients">Ingredients</label>
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
-                    <button type="button" id="next-ingredient-button">Add ingredient</button>
-                    <button type="button" id="delete-ingredient-button">Delete ingredient</button>
+                    <button type="button" id="next-ingredient-button" class="btn-large positive-button-style">Add ingredient</button>
+                    <button type="button" id="delete-ingredient-button" class="btn-large negative-button-style">Delete ingredient</button>
+                </div>
+            </div>
+            <!--Instructions-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-clipboard-list prefix"></i>
+                    <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
+                    <textarea id="preparation" name="preparation" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
+                    <label for="preparation">Cooking instructions. Remember to include all required steps and how long it needs in the oven.</label>
                 </div>
             </div>
             <!--Category options-->
@@ -43,7 +52,7 @@
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                         {% endfor %}
                     </select>
-                    <label for="category_name">Pizza categories</label>
+                    <label for="category_name" class="label-text">Pizza categories</label>
                 </div>
             </div>
             <div class="row">
@@ -81,7 +90,7 @@
             <!--Submit button-->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="submit btn-large">
+                    <button class="submit btn-large positive-button-style">
                         Submit pizza <i class="fas fa-motorcycle"></i>
                     </button>
                 </div>

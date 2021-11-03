@@ -10,6 +10,7 @@ main {
   }
 
 /* ------------------Header */
+
 .navbar-style {
     background-color: #F3D9A5;
 }
@@ -40,10 +41,6 @@ main {
     color: #191919;
 }
 
-.pizza-button {
-    background-color: #176421;
-}
-
 /* ------------------Footer */
 
 .page-footer {
@@ -66,7 +63,22 @@ main {
     background-color: rgba(0, 0, 0, 0.1)
 }
 
+/* ------------------Buttons*/
+
+.positive-button-style {
+    background-color: #176421;
+}
+
+.negative-button-style {
+    background-color: #c2211e;
+}
+
+.pizza-button {
+    background-color: #176421;
+}
+
 /* ------------------Media queries */
+
 @media screen and (max-width: 810px) {
     .social-links {
         padding-top: 10px;
