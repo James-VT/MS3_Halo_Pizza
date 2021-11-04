@@ -75,6 +75,7 @@ main {
 
 .pizza-button {
     background-color: #176421;
+    z-index: 1;
 }
 
 /* ------------------Media queries */

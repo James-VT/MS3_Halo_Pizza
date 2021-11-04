@@ -134,6 +134,7 @@ def add_recipe():
         is_dairy_free = "on" if request.form.get("is_dairy_free") else "off"
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
+            "image_url": request.form.get("image_url"),
             "short_description": request.form.get("short_description"),
             "category_name": request.form.getlist("category_name"),
             "ingredients": request.form.getlist("ingredients"),
