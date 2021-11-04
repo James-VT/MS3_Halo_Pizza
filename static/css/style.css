@@ -3,11 +3,13 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-  }
+    background-image: url("assets/images/background.jpg");
+    background-color: lightblue;
+}
 
 main {
     flex: 1 0 auto;
-  }
+}
 
 /* ------------------Header */
 
@@ -75,7 +77,6 @@ main {
 
 .pizza-button {
     background-color: #176421;
-    z-index: 1;
 }
 
 /* ------------------Media queries */
