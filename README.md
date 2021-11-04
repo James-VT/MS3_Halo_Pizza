@@ -170,3 +170,7 @@ Heroku allows us to host Python projects, instead of merely static sites which a
     * Materialize was used for some HTML component templates and CSS styling.
 * Why Materialize?
     * Materialize provides out-of-the-box features which make certain commonly-found features of web design quick and easy.
+
+## Credits
+
+During work on this project I had the misfortune to lose the workspace to a glitch the good folks at Gitpod never truly explained, but they sent me a downloadable version of the workspace. Huge thanks to Alan, tutor at Code Institute, and fellow students SuzyBee and Scott Böning for their patient assistance and encouragement at getting my project back up and running.
