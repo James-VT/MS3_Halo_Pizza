@@ -135,7 +135,7 @@ def add_recipe():
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
             "short_description": request.form.get("short_description"),
-            "category_names": request.form.getlist("category_names"),
+            "category_name": request.form.getlist("category_name"),
             "ingredients": request.form.getlist("ingredients"),
             "cooking_instructions": request.form.get("cooking_instructions"),
             "is_vegetarian": is_vegetarian,
@@ -148,7 +148,7 @@ def add_recipe():
         flash("Thank you for submitting your recipe!")
         return redirect(url_for("get_recipes"))
         
-    categories = mongo.db.categories.find().sort("category_names", 1)
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
 

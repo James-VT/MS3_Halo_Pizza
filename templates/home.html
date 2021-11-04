@@ -8,11 +8,11 @@
             <div class="card">
                 <div class="card-image">
                     <img src="{{ recipe.image_url }}">
-                    <span class="card-title">{{ recipe.pizza_name }}</span>
                     <a class="btn-floating halfway-fab waves-effect waves-light"><i class="fas fa-pizza-slice pizza-button"></i></a>
                 </div>
                 <div class="card-content">
-                    <strong>{{ recipe.category_name }}</strong>
+                    <span class="card-title">{{ recipe.pizza_name }}</span>
+                    <!-- <strong>{{ recipe.category_name }}</strong> -->
                     <p>{{ recipe.short_description }}</p>
                 </div>
             </div>
