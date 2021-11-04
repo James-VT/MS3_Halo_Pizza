@@ -35,8 +35,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-clipboard-list prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <textarea id="preparation" name="preparation" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
-                    <label for="preparation">Cooking instructions</label>
+                    <textarea id="cooking_instructions" name="cooking_instructions" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
+                    <label for="cooking_instructions">Cooking instructions</label>
                 </div>
             </div>
             <!--Image URL-->
@@ -53,17 +53,17 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <select multiple id="category_name" name="category_name" class="validate" required>
+                    <select multiple id="category_names" name="category_names" class="validate" required>
                         <option value="" disabled>Select one or more</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            <option value="{{ category.category_names }}">{{ category.category_names }}</option>
                         {% endfor %}
                     </select>
-                    <label for="category_name" class="label-text">Pizza categories</label>
+                    <label for="category_names" class="label-text">Pizza categories</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col m6 s12">
+                <div class="input-field col l3 m6 s12">
                     <div class="switch">
                         <i class="fas fa-egg prefix"></i>
                         <label for="is_vegetarian">
@@ -73,7 +73,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col m6 s12">
+                <div class="input-field col l3 m6 s12">
                     <div class="switch">
                         <i class="fas fa-seedling prefix"></i>
                         <label for="is_vegan">
@@ -83,7 +83,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col m6 s12">
+                <div class="input-field col l3 m6 s12">
                     <div class="switch">
                         <i class="fas fa-bread-slice prefix"></i>
                         <label for="is_gluten_free">
@@ -93,7 +93,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="input-field col m6 s12">
+                <div class="input-field col l3 m6 s12">
                     <div class="switch">
                         <i class="fas fa-cheese prefix"></i>
                         <label for="is_dairy_free">

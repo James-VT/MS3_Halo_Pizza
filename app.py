@@ -135,8 +135,9 @@ def add_recipe():
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
             "short_description": request.form.get("short_description"),
-            "category_name": request.form.getlist("category_name"),
+            "category_names": request.form.getlist("category_names"),
             "ingredients": request.form.getlist("ingredients"),
+            "cooking_instructions": request.form.get("cooking_instructions"),
             "is_vegetarian": is_vegetarian,
             "is_vegan": is_vegan,
             "is_gluten_free": is_gluten_free,
@@ -144,7 +145,10 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-    categories = mongo.db.categories.find().sort("category_name", 1)
+        flash("Thank you for submitting your recipe!")
+        return redirect(url_for("get_recipes"))
+        
+    categories = mongo.db.categories.find().sort("category_names", 1)
     return render_template("add_recipe.html", categories=categories)
 
 

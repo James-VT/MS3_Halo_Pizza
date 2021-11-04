@@ -157,6 +157,9 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * Code Institute's Task Manager walkthrough project
     * Much of the basic functionality, in particular the authentication and the basic functionality, are sourced from Code Institute's back end walkthrough project. Much of what's in Halo Pizzas' run.py file is adapted from that Task Manager app. While a lot of what's sourced are simple standard Flask conventions, this project owes a large debt to that one.
 
+* Dynamic Form Fields Javascript | Add & Remove https://www.youtube.com/watch?v=MLBLsxcB3Dc
+    * This video helped a lot with some of the form elements, in particular the creation of new fields for adding and removing ingredients.
+
 ---
 
 ## External libraries
