@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="center-align">Upload your recipe</h1>
+    <div class="row card-style">
+        <h1 class="center-align">Upload your recipe</h1>
+    </div>
 
     <div class="row card-panel" id="ingredient-upload-form">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
