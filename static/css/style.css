@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-image: url("assets/images/background.jpg");
+    background-image: url("assets/images/background.jpg") fixed no-repeat;
     background-color: lightblue;
 }
 
