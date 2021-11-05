@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-image: url("assets/images/background.jpg") fixed no-repeat;
+    background-image: url("assets/images/background.jpg");
     background-color: lightblue;
 }
 
@@ -65,14 +65,27 @@ main {
     background-color: rgba(0, 0, 0, 0.1)
 }
 
+/* ------------------Upload form*/
+
+.recipe-buttons-div {
+    position: relative;
+}
+
+.button-div {
+    text-align: center;
+    align-items: center;
+}
+
 /* ------------------Buttons*/
 
 .positive-button-style {
     background-color: #176421;
+    margin-top: 20px;
 }
 
 .negative-button-style {
     background-color: #c2211e;
+    margin-top: 20px;
 }
 
 .pizza-button {
@@ -87,11 +100,8 @@ main {
     }
 }
 
-@media screen and (max-width: 300px) {
-    .positive-button-style {
-        width: 75px;
-    }
-    .negative-button-style {
-        width: 75px;
+@media screen and (max-width: 425px) {
+    .button-div {
+        display: block;
     }
 }

@@ -3,7 +3,7 @@
 
     <h1 class="center-align">Upload your recipe</h1>
 
-    <div class="row" id="ingredient-upload-form">
+    <div class="row card-panel" id="ingredient-upload-form">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <div class="row">
                 <div class="input-field col s12">
@@ -26,8 +26,14 @@
                     <label for="ingredients">Ingredients</label>
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
-                    <button type="button" id="next-ingredient-button" class="btn-large positive-button-style">Add ingredient</button>
-                    <button type="button" id="delete-ingredient-button" class="btn-large negative-button-style">Delete ingredient</button>
+                    <div class="row recipe-buttons-div">
+                        <span class="button-div">
+                            <button type="button" id="next-ingredient-button" class="btn-large positive-button-style">Add ingredient</button>
+                        </span>
+                        <span class="button-div">
+                            <button type="button" id="delete-ingredient-button" class="btn-large negative-button-style">Delete ingredient</button>
+                        </span>
+                    </div>
                 </div>
             </div>
             <!--Instructions-->
