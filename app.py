@@ -148,9 +148,18 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Thank you for submitting your recipe!")
         return redirect(url_for("get_recipes"))
-        
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
+
+# Below code pieced together from Code Institute's Task Manager's
+# edit section. To show the pages, we only need to get the info
+# through to the page by ID - everything else from the edit
+# section was unnecessary.
+@app.route("/view_recipe/<recipe_id>")
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipe.html", recipe=recipe)
 
 
 if __name__ == "__main__":
