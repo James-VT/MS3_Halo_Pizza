@@ -2,19 +2,21 @@
 {% block content %}
 
 <div class="row card-style">
-    <h1 class="center-align">{ recipe.pizza_name }</h1>
+    <h1 class="center-align">{{ recipe.pizza_name }}</h1>
+</div>
+<div class="row item-center">
+    <div class="image-container-style">
+        <img src="{{ recipe.image_url }}"></img>
+    </div>
 </div>
 <div class="row">
-    <span>
+    <div class="border-style">
         {% for ingredient in recipe.ingredients %}
         <ul>
             <li>{{ ingredient }}</li>
         </ul>
         {% endfor %}
-    </span>
-    <span>
-        <img src="{{ recipe.image_url }}"></img>
-    </span>
+    </div>
 </div>
 <div>
     {{ recipe.cooking_instructions }}
