@@ -7,19 +7,44 @@
 <div class="row item-center">
     <div class="image-container-style">
         <img src="{{ recipe.image_url }}"></img>
+        <p>Pizza uploaded by user {{ recipe.created_by }}</p>
+        <p>Categories:</p>
+        <ul>
+            {% for category in recipe.category_name %}
+                <li>{{ category }}</li>
+            {% endfor %}
+        </ul>
+        {% if recipe.is_gluten_free %}
+            <p>Gluten free</p>
+        {% endif %}
+        {% if recipe.is_dairy_free %}
+            <p>Dairy free</p>
+        {% endif %}
+        {% if recipe.is_vegetarian %}
+            <p>Vegetarian</p>
+        {% endif %}
+        {% if recipe.is_vegan %}
+            <p>Vegan</p>
+        {% endif %}
     </div>
 </div>
 <div class="row">
     <div class="border-style">
-        {% for ingredient in recipe.ingredients %}
+        
         <ul>
+            {% for ingredient in recipe.ingredients %}
             <li>{{ ingredient }}</li>
+            {% endfor %}
         </ul>
-        {% endfor %}
+        
     </div>
 </div>
 <div>
-    {{ recipe.cooking_instructions }}
+    {% for cooking_step in recipe.cooking_steps %}
+    <ul>
+        <li>{{ cooking_step }}</li>
+    </ul>
+    {% endfor %}
 </div>
 
 {% endblock %}
