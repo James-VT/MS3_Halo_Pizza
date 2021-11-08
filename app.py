@@ -138,7 +138,7 @@ def add_recipe():
             "short_description": request.form.get("short_description"),
             "category_name": request.form.getlist("category_name"),
             "ingredients": request.form.getlist("ingredients"),
-            "cooking_instructions": request.form.get("cooking_instructions"),
+            "cooking_steps": request.form.getlist("cooking_steps"),
             "is_vegetarian": is_vegetarian,
             "is_vegan": is_vegan,
             "is_gluten_free": is_gluten_free,

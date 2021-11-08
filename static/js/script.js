@@ -36,6 +36,7 @@ $(document).ready(function(){
      }
   });
 
+/**Below is the functionality for adding additional ingredient fields to the add_recipe page */
 var next_ingredient_button = document.getElementById('next-ingredient-button');
 var ingredient_insert = document.getElementById('ingredient-insert');
 var delete_ingredient_button = document.getElementById('delete-ingredient-button');
@@ -60,5 +61,33 @@ delete_ingredient_button.onclick = function(){
     var ingredient_fields = document.getElementsByClassName('ingredient-input');
     if(ingredient_fields.length > 1) {
         ingredient_insert.removeChild(ingredient_fields[(ingredient_fields.length) - 1]);
+    }
+}
+
+/**Below is the functionality for adding additional cooking step fields to the add_recipe page */
+var next_step_button = document.getElementById('next-step-button');
+var step_insert = document.getElementById('step-insert');
+var delete_step_button = document.getElementById('delete-step-button');
+var step_section = document.getElementById('step-section');
+
+/** The below code links to our add recipe page, and creates a new cooking step slot each time it is clicked
+ * Below code heavily borrowed from: https://www.youtube.com/watch?v=MLBLsxcB3Dc
+ */
+ next_step_button.onclick = function(){
+    var nextStep = document.createElement('input');
+    nextStep.setAttribute('type', 'text');
+    nextStep.setAttribute('id', 'cooking_steps');
+    nextStep.setAttribute('name', 'cooking_steps');
+    nextStep.setAttribute('class', 'step-input');
+    nextStep.setAttribute('minlength', '4');
+    nextStep.setAttribute('required', 'true');
+    nextStep.setAttribute('placeholder', 'Another step');
+    step_insert.appendChild(nextStep);
+}
+
+delete_step_button.onclick = function(){
+    var step_fields = document.getElementsByClassName('step-input');
+    if(step_fields.length > 1) {
+        step_insert.removeChild(step_fields[(step_fields.length) - 1]);
     }
 }
