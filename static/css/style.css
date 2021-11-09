@@ -195,3 +195,23 @@ I have adapted it slightly.*/
         display: block;
     }
 }
+
+/* The below media query makes the ingredients appear above the instructions at small screen sizes. */
+@media screen and (max-width: 975px) {
+    #recipe-holder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #details-box {
+        order: 1;
+    }
+
+    #ingredients-box {
+        order: 2;
+    }
+
+    #cooking-step-box {
+        order: 3;
+    }
+}
