@@ -3,10 +3,10 @@
 
 <div class="row card-style">
     <h1 class="center-align">{{ recipe.pizza_name }}</h1>
+    <img src="{{ recipe.image_url }}"></img>
 </div>
-<div class="row item-center ">
-    <div class="col image-container-style s12 l4">
-        <img src="{{ recipe.image_url }}" class="pizza-image"></img>
+<div class="row ">
+    <div class="col s12 l4">
         <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
         <p>Categories:</p>
         <ul>
@@ -27,8 +27,15 @@
             <p>Vegan</p>
         {% endif %}
     </div>
-</div>
-<div class="row">
+
+    <div class="col s12 l4">
+        {% for cooking_step in recipe.cooking_steps %}
+        <ul>
+            <li>{{ cooking_step }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+
     <div class="col border-style s12 l4">
         
         <ul>
@@ -38,15 +45,7 @@
         </ul>
         
     </div>
-</div>
-<div class="row">
-    <div class="col s12 l4">
-        {% for cooking_step in recipe.cooking_steps %}
-        <ul>
-            <li>{{ cooking_step }}</li>
-        </ul>
-        {% endfor %}
-    </div>
+
 </div>
 
 {% endblock %}
