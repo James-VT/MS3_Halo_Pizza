@@ -142,7 +142,7 @@ Heroku allows us to host Python projects, instead of merely static sites which a
     * This project was created in the Google Chrome browser, and as such Chrome was used as the default testing browser.
 
 * [Google Fonts](https://fonts.google.com/)
-    * The fonts for the site were imported from Google Fonts.
+    * The fonts for the site were imported from Google Fonts. This site uses Roboto and Permanent Marker throughout.
 
 *  [FontAwesome](https://fontawesome.com/)
     * The icons for social media links were taken from FontAwesome.

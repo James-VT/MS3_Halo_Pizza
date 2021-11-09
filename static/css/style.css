@@ -7,6 +7,10 @@ body {
     background-color: lightblue;
 }
 
+h1 {
+    font-family: 'Permanent Marker', cursive;
+}
+
 main {
     flex: 1 0 auto;
 }
