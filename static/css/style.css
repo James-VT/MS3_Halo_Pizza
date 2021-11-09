@@ -90,6 +90,18 @@ main {
     position: relative;
 }
 
+.pizza-image {
+    border: 3px solid;
+    border-style: dotted;
+    border-radius: 10%;
+    padding: 10px;
+    display: inline;
+}
+
+.creator-name {
+    display: inline;
+}
+
 /* ------------------Upload form*/
 
 .recipe-buttons-div {
@@ -127,7 +139,7 @@ I have adapted it slightly.*/
     border: 3px solid;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     /* display: inline-block; */
-    padding: 70px 0;
+    /* padding: 70px 0; */
     text-align: center;
     width: 50%;
     /* margin-left: 0;

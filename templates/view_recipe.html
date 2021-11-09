@@ -6,8 +6,8 @@
 </div>
 <div class="row item-center">
     <div class="image-container-style">
-        <img src="{{ recipe.image_url }}"></img>
-        <p>Pizza uploaded by user {{ recipe.created_by }}</p>
+        <img src="{{ recipe.image_url }}" class="pizza-image"></img>
+        <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
         <p>Categories:</p>
         <ul>
             {% for category in recipe.category_name %}
