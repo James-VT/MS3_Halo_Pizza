@@ -15,6 +15,11 @@ main {
     flex: 1 0 auto;
 }
 
+/* .container {
+    margin-right: 0px;
+    margin-left: 0px;
+} */
+
 /* ------------------Header */
 
 .navbar-style {
@@ -103,6 +108,14 @@ main {
 
 .creator-name {
     display: inline;
+}
+
+/* .box-spacing {
+    margin: 10px;
+} */
+
+#recipe-holder {
+    text-align: center;
 }
 
 /* ------------------Upload form*/

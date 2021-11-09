@@ -6,7 +6,7 @@
     <img src="{{ recipe.image_url }}"></img>
 </div>
 <div class="row" id="recipe-holder">
-    <div class="col border-style s12 l4" id="details-box">
+    <div class="col border-style box-spacing s12 l4" id="details-box">
         <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
         <p>Categories:</p>
         <ul>
@@ -28,7 +28,7 @@
         {% endif %}
     </div>
 
-    <div class="col border-style s12 l4" id="cooking-step-box">
+    <div class="col border-style box-spacing s12 l4" id="cooking-step-box">
         {% for cooking_step in recipe.cooking_steps %}
         <ul>
             <li>{{ cooking_step }}</li>
@@ -36,7 +36,7 @@
         {% endfor %}
     </div>
 
-    <div class="col border-style s12 l4" id="ingredients-box">
+    <div class="col border-style box-spacing s12 l4" id="ingredients-box">
         
         <ul>
             {% for ingredient in recipe.ingredients %}
