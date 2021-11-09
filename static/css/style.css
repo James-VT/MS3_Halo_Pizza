@@ -96,6 +96,9 @@ main {
     border-radius: 10%;
     padding: 10px;
     display: inline;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 .creator-name {
