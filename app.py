@@ -128,10 +128,14 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        is_vegetarian = "on" if request.form.get("is_vegetarian") else "off"
-        is_vegan = "on" if request.form.get("is_vegan") else "off"
-        is_gluten_free = "on" if request.form.get("is_gluten_free") else "off"
-        is_dairy_free = "on" if request.form.get("is_dairy_free") else "off"
+        is_vegetarian = "true" if request.form.get(
+            "is_vegetarian") else "false"
+        is_vegan = "true" if request.form.get(
+            "is_vegan") else "false"
+        is_gluten_free = "true" if request.form.get(
+            "is_gluten_free") else "false"
+        is_dairy_free = "true" if request.form.get(
+            "is_dairy_free") else "false"
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
             "image_url": request.form.get("image_url"),

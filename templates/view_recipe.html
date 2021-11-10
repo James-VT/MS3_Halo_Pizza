@@ -3,12 +3,13 @@
 
 <div class="row card-style">
     <h1 class="center-align">{{ recipe.pizza_name }}</h1>
-    <img src="{{ recipe.image_url }}"></img>
+    <img src="{{ recipe.image_url }}" class="responsive-image"></img>
 </div>
 <div class="row" id="recipe-holder">
     <div class="col s12 l4 " id="details-box">
-        <div class="box-spacing border-style small-screen-padding">
-            <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
+        <div class="box-spacing border-style recipe-box-style small-screen-padding">
+            <h5>Details</h5>
+            <p class="creator-name">Pizza uploaded by user: {{ recipe.created_by }}</p>
             <p>Categories:</p>
             <ul>
                 {% for category in recipe.category_name %}
@@ -31,17 +32,20 @@
     </div>
 
     <div class="col s12 l4" id="cooking-step-box">
-        <div class="small-screen-padding">
-            {% for cooking_step in recipe.cooking_steps %}
+        <div class="small-screen-padding border-style recipe-box-style">
+            <h5>Cooking steps</h5>
             <ul>
-                <li>{{ cooking_step }}</li>
+                {% for cooking_step in recipe.cooking_steps %}
+                    <li>{{ cooking_step }}</li>
+                {% endfor %}
             </ul>
-            {% endfor %}
+            
         </div>
     </div>
 
     <div class="col s12 l4" id="ingredients-box">
-        <div class="box-spacing border-style small-screen-padding">
+        <div class="box-spacing border-style recipe-box-style small-screen-padding">
+            <h5>Ingredients</h5>
             <ul>
                 {% for ingredient in recipe.ingredients %}
                 <li>{{ ingredient }}</li>
