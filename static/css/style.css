@@ -3,8 +3,8 @@ body {
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-image: url("assets/images/background.jpg");
     background-color: lightblue;
+    background-image: url("../assets/images/background.jpg");
 }
 
 h1 {
@@ -232,6 +232,6 @@ I have adapted it slightly.*/
 
 @media screen and (max-width: 975px) {
     .small-screen-padding {
-        padding-
+        margin-top: 20px; 
     }
 }
