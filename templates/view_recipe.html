@@ -6,44 +6,48 @@
     <img src="{{ recipe.image_url }}"></img>
 </div>
 <div class="row" id="recipe-holder">
-    <div class="col border-style box-spacing s12 l4" id="details-box">
-        <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
-        <p>Categories:</p>
-        <ul>
-            {% for category in recipe.category_name %}
-                <li>{{ category }}</li>
-            {% endfor %}
-        </ul>
-        {% if recipe.is_gluten_free %}
-            <p>Gluten free</p>
-        {% endif %}
-        {% if recipe.is_dairy_free %}
-            <p>Dairy free</p>
-        {% endif %}
-        {% if recipe.is_vegetarian %}
-            <p>Vegetarian</p>
-        {% endif %}
-        {% if recipe.is_vegan %}
-            <p>Vegan</p>
-        {% endif %}
+    <div class="col s12 l4 " id="details-box">
+        <div class="box-spacing border-style small-screen-padding">
+            <p class="creator-name">Pizza uploaded by user {{ recipe.created_by }}</p>
+            <p>Categories:</p>
+            <ul>
+                {% for category in recipe.category_name %}
+                    <li>{{ category }}</li>
+                {% endfor %}
+            </ul>
+            {% if recipe.is_gluten_free %}
+                <p>Gluten free</p>
+            {% endif %}
+            {% if recipe.is_dairy_free %}
+                <p>Dairy free</p>
+            {% endif %}
+            {% if recipe.is_vegetarian %}
+                <p>Vegetarian</p>
+            {% endif %}
+            {% if recipe.is_vegan %}
+                <p>Vegan</p>
+            {% endif %}
+        </div>
     </div>
 
-    <div class="col border-style box-spacing s12 l4" id="cooking-step-box">
-        {% for cooking_step in recipe.cooking_steps %}
-        <ul>
-            <li>{{ cooking_step }}</li>
-        </ul>
-        {% endfor %}
+    <div class="col s12 l4" id="cooking-step-box">
+        <div class="small-screen-padding">
+            {% for cooking_step in recipe.cooking_steps %}
+            <ul>
+                <li>{{ cooking_step }}</li>
+            </ul>
+            {% endfor %}
+        </div>
     </div>
 
-    <div class="col border-style box-spacing s12 l4" id="ingredients-box">
-        
-        <ul>
-            {% for ingredient in recipe.ingredients %}
-            <li>{{ ingredient }}</li>
-            {% endfor %}
-        </ul>
-        
+    <div class="col s12 l4" id="ingredients-box">
+        <div class="box-spacing border-style small-screen-padding">
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
 </div>

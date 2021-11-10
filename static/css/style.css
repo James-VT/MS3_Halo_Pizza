@@ -110,9 +110,10 @@ main {
     display: inline;
 }
 
-/* .box-spacing {
-    margin: 10px;
-} */
+.box-spacing {
+    margin-right: 100px;
+    margin-left: 100px;
+}
 
 #recipe-holder {
     text-align: center;
@@ -226,5 +227,11 @@ I have adapted it slightly.*/
 
     #cooking-step-box {
         order: 3;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .small-screen-padding {
+        padding-
     }
 }
