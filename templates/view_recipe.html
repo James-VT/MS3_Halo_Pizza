@@ -8,7 +8,7 @@
 <div class="row" id="recipe-holder">
     <div class="col s12 l4 " id="details-box">
         <div class="box-spacing border-style recipe-box-style small-screen-padding">
-            <h5>Details</h5>
+            <h4 class="section-header">Details</h4>
             <p class="creator-name">Pizza uploaded by user: {{ recipe.created_by }}</p>
             <p>Categories:</p>
             <ul>
@@ -17,15 +17,19 @@
                 {% endfor %}
             </ul>
             {% if recipe.is_gluten_free %}
+                <i class="fas fa-bread-slice prefix"></i>
                 <p>Gluten free</p>
             {% endif %}
             {% if recipe.is_dairy_free %}
+                <i class="fas fa-cheese prefix"></i>
                 <p>Dairy free</p>
             {% endif %}
             {% if recipe.is_vegetarian %}
+                <i class="fas fa-egg prefix"></i>
                 <p>Vegetarian</p>
             {% endif %}
             {% if recipe.is_vegan %}
+                <i class="fas fa-seedling prefix"></i>
                 <p>Vegan</p>
             {% endif %}
         </div>
@@ -33,7 +37,7 @@
 
     <div class="col s12 l4" id="cooking-step-box">
         <div class="small-screen-padding border-style recipe-box-style">
-            <h5>Cooking steps</h5>
+            <h4 class="section-header">Cooking steps</h4>
             <ul>
                 {% for cooking_step in recipe.cooking_steps %}
                     <li>{{ cooking_step }}</li>
@@ -45,7 +49,7 @@
 
     <div class="col s12 l4" id="ingredients-box">
         <div class="box-spacing border-style recipe-box-style small-screen-padding">
-            <h5>Ingredients</h5>
+            <h4 class="section-header">Ingredients</h4>
             <ul>
                 {% for ingredient in recipe.ingredients %}
                 <li>{{ ingredient }}</li>

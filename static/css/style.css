@@ -8,8 +8,8 @@ body {
     background-image: url("../images/background1.jpg");
 }
 
-h1 {
-    font-family: 'Just Another Hand', cursive;
+h1, h4, h5 {
+    font-family: 'Just Me Again Down Here', cursive;
 }
 
 main {
@@ -135,6 +135,10 @@ main {
     height: auto;
 }
 
+/* .section-header {
+    font-size: 200%;
+} */
+
 /* ------------------Upload form*/
 
 .recipe-buttons-div {
@@ -254,6 +258,6 @@ I have adapted it slightly.*/
 
 @media screen and (max-width: 680px) {
     .pizza-name {
-        font-size: 200%;
+        font-size: 250%;
     }
 }
