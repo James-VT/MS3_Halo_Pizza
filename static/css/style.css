@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     background-color: lightblue;
-    background-image: url("../assets/images/background.jpg");
+    background-image: url("static/images/background.jpg");
 }
 
 h1 {
