@@ -4,7 +4,8 @@ body {
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     background-color: lightblue;
-    background-image: url("static/images/background.jpg");
+    /* background-image: url({{ url_for('static', filename='static/css/images/background.jpg') }}); */
+    background-image: url("../images/background1.jpg");
 }
 
 h1 {
@@ -74,7 +75,13 @@ main {
     background-color: rgba(0, 0, 0, 0.1)
 }
 
-/* ------------------Recipe page */
+/* ------------------Home page */
+
+.home-card-style {
+    border-radius: 10%;
+}
+
+/* ------------------View recipe page */
 
 .item-center {
     margin: auto;
