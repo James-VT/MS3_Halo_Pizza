@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Just Another Hand', cursive;
 }
 
 main {
@@ -249,5 +249,11 @@ I have adapted it slightly.*/
 @media screen and (max-width: 975px) {
     .small-screen-padding {
         margin-top: 20px; 
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .pizza-name {
+        font-size: 200%;
     }
 }
