@@ -137,6 +137,7 @@ hr {
 .responsive-image {
     width: 100%;
     height: auto;
+    max-width: 500px;
 }
 
 /* .section-header {
@@ -263,5 +264,25 @@ I have adapted it slightly.*/
 @media screen and (max-width: 680px) {
     .pizza-name {
         font-size: 250%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .cooking-steps-box-spacing {
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo-style {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .box-spacing {
+        margin-right: 10vw;
+        margin-left: 10vw;
     }
 }
