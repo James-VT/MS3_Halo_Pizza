@@ -4,8 +4,9 @@
     
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel border-style login-form">
+        <!--offset-m2 removed from class of form element for centring purposes-->
+        <form class="col s12 m8" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel login-border-style login-form">
                 <h2 class="center-align">Log in</h2>
                 <hr>
                 <!--Username-->
@@ -26,7 +27,7 @@
                 </div>
                 <!--log in button-->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large">
+                    <button type="submit" class="col s12 btn-large positive-button-style">
                         Log in <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
