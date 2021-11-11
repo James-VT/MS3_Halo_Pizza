@@ -82,7 +82,17 @@ hr {
 /* ------------------Home page */
 
 .home-card-style {
-    border-radius: 10%;
+    border-radius: 10% !important;
+}
+
+.home-page-image {
+    padding: 5px;
+    border-radius: 10% !important;
+}
+
+.card-image-background {
+    border-radius: 10% !important;
+    background-color: darkseagreen;
 }
 
 /* ------------------Register form */
