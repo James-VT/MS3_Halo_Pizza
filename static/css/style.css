@@ -85,6 +85,12 @@ hr {
     border-radius: 10%;
 }
 
+/* ------------------Register form */
+
+.register-form {
+    margin-bottom: 100px;
+}
+
 /* ------------------login page */
 
 .login-form {
