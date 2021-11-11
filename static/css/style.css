@@ -21,6 +21,10 @@ main {
     margin-left: 0px;
 } */
 
+hr {
+    width: 90%;
+}
+
 /* ------------------Header */
 
 .navbar-style {
@@ -231,7 +235,7 @@ I have adapted it slightly.*/
 }
 
 /* The below media query makes the ingredients appear above the instructions at small screen sizes. */
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 990px) {
     #recipe-holder {
         display: flex;
         flex-direction: column;
@@ -250,7 +254,7 @@ I have adapted it slightly.*/
     }
 }
 
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 990px) {
     .small-screen-padding {
         margin-top: 20px; 
     }
