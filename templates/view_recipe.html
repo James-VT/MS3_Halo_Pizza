@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row card-style">
+<div class="row view-recipe-headliner">
     <h1 class="center-align pizza-name">{{ recipe.pizza_name }}</h1>
+        <hr>
+        <div class="col s12 center-align">
+            <button class="submit btn-large positive-button-style edit-button">
+                Edit recipe <i class="fas fa-feather"></i>
+            </button>
+        </div>
     <img src="{{ recipe.image_url }}" class="responsive-image pizza-title-picture"></img>
 </div>
 <div class="row" id="recipe-holder">

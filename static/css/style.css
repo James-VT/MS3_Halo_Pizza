@@ -122,6 +122,19 @@ hr {
 
 /* ------------------View recipe page */
 
+.view-recipe-headliner {
+    border: 3px solid;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    position: relative;
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.edit-button {
+    margin-bottom: 20px;
+}
+
 .item-center {
     margin: auto;
     width: 50%;
