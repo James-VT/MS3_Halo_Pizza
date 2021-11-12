@@ -179,6 +179,10 @@ hr {
     font-size: 200%;
 } */
 
+.pizza-title-picture {
+    border: 2px solid;
+}
+
 /* ------------------Upload form*/
 
 .recipe-buttons-div {

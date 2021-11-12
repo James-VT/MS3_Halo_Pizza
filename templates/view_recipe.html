@@ -3,7 +3,7 @@
 
 <div class="row card-style">
     <h1 class="center-align pizza-name">{{ recipe.pizza_name }}</h1>
-    <img src="{{ recipe.image_url }}" class="responsive-image"></img>
+    <img src="{{ recipe.image_url }}" class="responsive-image pizza-title-picture"></img>
 </div>
 <div class="row" id="recipe-holder">
     <div class="col s12 l4 " id="details-box">
@@ -42,6 +42,7 @@
             <hr>
             <ul>
                 {% for cooking_step in recipe.cooking_steps %}
+                    <br>
                     <li>{{ cooking_step }}</li>
                 {% endfor %}
             </ul>
