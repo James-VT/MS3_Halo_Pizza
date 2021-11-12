@@ -5,7 +5,7 @@
         <h1 class="center-align">Edit your recipe</h1>
     </div>
 
-    <div class="row card-panel form-style offset-m2" id="ingredient-upload-form">
+    <div class="row card-panel form-style" id="ingredient-upload-form">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
             <div class="row">
                 <div class="input-field col s12">
@@ -79,10 +79,10 @@
                     <label for="category_name" class="label-text">Pizza categories</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row slider-row">
                 <div class="input-field col l3 m6 s12">
                     <div class="switch">
-                        <i class="fas fa-egg prefix"></i>
+                        <i class="fas fa-egg prefix icon-hide"></i>
                         <label for="is_vegetarian">
                             <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
                             <span class="lever"></span>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="input-field col l3 m6 s12">
                     <div class="switch">
-                        <i class="fas fa-seedling prefix"></i>
+                        <i class="fas fa-seedling prefix icon-hide"></i>
                         <label for="is_vegan">
                             <input type="checkbox" id="is_vegan" name="is_vegan">
                             <span class="lever"></span>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="input-field col l3 m6 s12">
                     <div class="switch">
-                        <i class="fas fa-bread-slice prefix"></i>
+                        <i class="fas fa-bread-slice prefix icon-hide"></i>
                         <label for="is_gluten_free">
                             <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
                             <span class="lever"></span>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="input-field col l3 m6 s12">
                     <div class="switch">
-                        <i class="fas fa-cheese prefix"></i>
+                        <i class="fas fa-cheese prefix icon-hide"></i>
                         <label for="is_dairy_free">
                             <input type="checkbox" id="is_dairy_free" name="is_dairy_free">
                             <span class="lever"></span>

@@ -264,13 +264,13 @@ I have adapted it slightly.*/
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     /* display: inline-block; */
     /* padding: 70px 0; */
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     background: #ffffff;
     position: relative;
     align-items: center;
+    width: 80%;
 }
 
 /* ------------------Buttons*/
@@ -358,5 +358,11 @@ I have adapted it slightly.*/
 @media screen and (min-width: 600px) {
     .login-form {
         width: 470px;
+    }
+}
+
+@media screen and (max-width: 1030px) and (min-width: 980px) {
+    .icon-hide {
+        display: none;
     }
 }
