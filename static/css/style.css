@@ -257,6 +257,22 @@ I have adapted it slightly.*/
 }
 /*End of borrowed code.*/
 
+/* ------------------Edit form*/
+
+.form-style {
+    border: 3px solid;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    /* display: inline-block; */
+    /* padding: 70px 0; */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: #ffffff;
+    position: relative;
+    align-items: center;
+}
+
 /* ------------------Buttons*/
 
 .positive-button-style {
