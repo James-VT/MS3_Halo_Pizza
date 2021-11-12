@@ -5,9 +5,9 @@
     <h1 class="center-align pizza-name">{{ recipe.pizza_name }}</h1>
         <hr>
         <div class="col s12 center-align">
-            <button class="submit btn-large positive-button-style edit-button">
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="submit btn-large positive-button-style edit-button">
                 Edit recipe <i class="fas fa-feather"></i>
-            </button>
+            </a>
         </div>
     <img src="{{ recipe.image_url }}" class="responsive-image pizza-title-picture"></img>
 </div>
