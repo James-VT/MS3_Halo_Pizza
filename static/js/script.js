@@ -54,13 +54,13 @@ next_ingredient_button.onclick = function(){
     nextIngredient.setAttribute('minlength', '4');
     nextIngredient.setAttribute('required', 'true');
     nextIngredient.setAttribute('placeholder', 'Another ingredient');
-    ingredient_insert.appendChild(nextIngredient);
+    ingredient_section.appendChild(nextIngredient);
 }
 
 delete_ingredient_button.onclick = function(){
     var ingredient_fields = document.getElementsByClassName('ingredient-input');
     if(ingredient_fields.length > 1) {
-        ingredient_insert.removeChild(ingredient_fields[(ingredient_fields.length) - 1]);
+        ingredient_section.removeChild(ingredient_fields[(ingredient_fields.length) - 1]);
     }
 }
 
@@ -68,7 +68,7 @@ delete_ingredient_button.onclick = function(){
 var next_step_button = document.getElementById('next-step-button');
 var step_insert = document.getElementById('step-insert');
 var delete_step_button = document.getElementById('delete-step-button');
-var step_section = document.getElementById('step-section');
+var cooking_steps_section = document.getElementById('cooking-steps-section');
 
 /** The below code links to our add recipe page, and creates a new cooking step slot each time it is clicked
  * Below code heavily borrowed from: https://www.youtube.com/watch?v=MLBLsxcB3Dc
@@ -78,16 +78,16 @@ var step_section = document.getElementById('step-section');
     nextStep.setAttribute('type', 'text');
     nextStep.setAttribute('id', 'cooking_steps');
     nextStep.setAttribute('name', 'cooking_steps');
-    nextStep.setAttribute('class', 'step-input');
+    nextStep.setAttribute('class', 'cooking_steps');
     nextStep.setAttribute('minlength', '4');
     nextStep.setAttribute('required', 'true');
     nextStep.setAttribute('placeholder', 'Another step');
-    step_insert.appendChild(nextStep);
+    cooking_steps_section.appendChild(nextStep);
 }
 
 delete_step_button.onclick = function(){
-    var step_fields = document.getElementsByClassName('step-input');
+    var step_fields = document.getElementsByClassName('cooking_steps');
     if(step_fields.length > 1) {
-        step_insert.removeChild(step_fields[(step_fields.length) - 1]);
+        cooking_steps_section.removeChild(step_fields[(step_fields.length) - 1]);
     }
 }

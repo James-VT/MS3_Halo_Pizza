@@ -168,6 +168,31 @@ def view_recipe(recipe_id):
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if request.method == "POST":
+        is_vegetarian = "true" if request.form.get(
+            "is_vegetarian") else "false"
+        is_vegan = "true" if request.form.get(
+            "is_vegan") else "false"
+        is_gluten_free = "true" if request.form.get(
+            "is_gluten_free") else "false"
+        is_dairy_free = "true" if request.form.get(
+            "is_dairy_free") else "false"
+        submit = {
+            "pizza_name": request.form.get("pizza_name"),
+            "image_url": request.form.get("image_url"),
+            "short_description": request.form.get("short_description"),
+            "category_name": request.form.getlist("category_name"),
+            "ingredients": request.form.getlist("ingredients"),
+            "cooking_steps": request.form.getlist("cooking_steps"),
+            "is_vegetarian": is_vegetarian,
+            "is_vegan": is_vegan,
+            "is_gluten_free": is_gluten_free,
+            "is_dairy_free": is_dairy_free,
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe successfully updated!")
+        
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
