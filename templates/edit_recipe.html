@@ -25,10 +25,11 @@
                 <div class="input-field col s12" id="ingredient-section">
                     <i class="fas fa-pepper-hot prefix"></i>
                     {% for ingredient in recipe.ingredients %}
-                        <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" value="{{ recipe.ingredient }}" required>
+                        <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" value="{{ ingredient }}" required>
+                        <label for="ingredients">Ingredients</label>
                     {% endfor %}
                     
-                    <label for="ingredients">Ingredients</label>
+                    
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
                     <div class="row recipe-buttons-div">
@@ -46,7 +47,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-clipboard-list prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <textarea id="cooking_steps" name="cooking_steps" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
+                    {% for cooking_step in recipe.cooking_steps %}
+                        <textarea id="cooking_steps" name="cooking_steps" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required>{{ cooking_step }}</textarea>
+                    {% endfor %}
                     <label for="cooking_steps">Cooking instructions</label>
                     <div id="step-insert"></div>
                     <div class="row step-buttons-div">
