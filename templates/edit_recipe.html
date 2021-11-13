@@ -10,14 +10,14 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pizza-slice prefix"></i>
-                    <input id="pizza_name" name="pizza_name" minlength="4" type="text" class="validate" required>
+                    <input id="pizza_name" name="pizza_name" minlength="4" value="{{ recipe.pizza_name }}" type="text" class="validate" required>
                     <label for="pizza_name">Pizza name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-feather-alt prefix"></i>
-                    <textarea id="short_description" name="short_description" minlength="5" class="materialize-textarea validate" required></textarea>
+                    <textarea id="short_description" name="short_description" minlength="5" class="materialize-textarea validate" required>{{ recipe.short_description }}</textarea>
                     <label for="short_description">Short description</label>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-camera-retro prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <input id="image_url" name="image_url" type="text" class="validate" value="https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg" required>
+                    <input id="image_url" name="image_url" type="text" class="validate" value="{{ recipe.image_url }}}" required>
                     <label for="image_url">Image URL</label>
                 </div>
             </div>
@@ -73,7 +73,12 @@
                     <select multiple id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Select one or more</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            <!--Need to use "in" below as users can select multiple categories, making it an array -->
+                            {% if category.category_name in recipe.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name" class="label-text">Pizza categories</label>
@@ -84,7 +89,11 @@
                     <div class="switch">
                         <i class="fas fa-egg prefix icon-hide"></i>
                         <label for="is_vegetarian">
-                            <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+                            {% if recipe.is_vegetarian %}
+                                <input type="checkbox" id="is_vegetarian" name="is_vegetarian" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+                            {% endif %}
                             <span class="lever"></span>
                             Vegetarian
                         </label>
@@ -94,7 +103,11 @@
                     <div class="switch">
                         <i class="fas fa-seedling prefix icon-hide"></i>
                         <label for="is_vegan">
-                            <input type="checkbox" id="is_vegan" name="is_vegan">
+                            {% if recipe.is_vegan %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_vegan" name="is_vegan">
+                            {% endif %}
                             <span class="lever"></span>
                             Vegan
                         </label>
@@ -104,7 +117,11 @@
                     <div class="switch">
                         <i class="fas fa-bread-slice prefix icon-hide"></i>
                         <label for="is_gluten_free">
-                            <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
+                            {% if recipe.is_gluten_free %}
+                                <input type="checkbox" id="is_gluten_free" name="is_gluten_free" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_gluten_free" name="is_gluten_free">
+                            {% endif %}
                             <span class="lever"></span>
                             Gluten free
                         </label>
@@ -114,7 +131,11 @@
                     <div class="switch">
                         <i class="fas fa-cheese prefix icon-hide"></i>
                         <label for="is_dairy_free">
-                            <input type="checkbox" id="is_dairy_free" name="is_dairy_free">
+                            {% if recipe.is_dary_free %}
+                                <input type="checkbox" id="is_dairy_free" name="is_dairy_free" checked>
+                            {% else %}
+                                <input type="checkbox" id="is_dairy_free" name="is_dairy_free">
+                            {% endif %}
                             <span class="lever"></span>
                             Dairy free
                         </label>
@@ -124,6 +145,10 @@
             <!--Submit button-->
             <div class="row">
                 <div class="col s12 center-align">
+                    <!--Cancel button-->
+                    <a href="{{ url_for('get_recipes') }}" class="btn-large negative-button-style">
+                        Cancel edit <i class="fas fa-times-circle right"></i>
+                    </a>
                     <button class="submit btn-large positive-button-style">
                         Edit pizza <i class="fas fa-edit"></i>
                     </button>
