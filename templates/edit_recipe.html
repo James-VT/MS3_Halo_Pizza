@@ -24,7 +24,10 @@
             <div class="row">
                 <div class="input-field col s12" id="ingredient-section">
                     <i class="fas fa-pepper-hot prefix"></i>
-                    <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" required>
+                    {% for ingredient in recipe.ingredients %}
+                        <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" value="{{ recipe.ingredient }}" required>
+                    {% endfor %}
+                    
                     <label for="ingredients">Ingredients</label>
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
