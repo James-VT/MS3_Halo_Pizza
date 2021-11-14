@@ -4,11 +4,15 @@
 <div class="row view-recipe-headliner">
     <h1 class="center-align pizza-name">{{ recipe.pizza_name }}</h1>
         <hr>
+        
         <div class="col s12 center-align">
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="submit btn-large positive-button-style edit-button">
-                Edit recipe <i class="fas fa-feather"></i>
-            </a>
+            {% if session.user|lower == recipe.created_by|lower %}
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="submit btn-large positive-button-style edit-button">
+                    Edit recipe <i class="fas fa-feather"></i>
+                </a>
+            {% endif %}
         </div>
+        
     <img src="{{ recipe.image_url }}" class="responsive-image pizza-title-picture"></img>
 </div>
 <div class="row" id="recipe-holder">
