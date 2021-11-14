@@ -128,14 +128,14 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
-        is_vegetarian = "true" if request.form.get(
-            "is_vegetarian") else "false"
-        is_vegan = "true" if request.form.get(
-            "is_vegan") else "false"
-        is_gluten_free = "true" if request.form.get(
-            "is_gluten_free") else "false"
-        is_dairy_free = "true" if request.form.get(
-            "is_dairy_free") else "false"
+        is_vegetarian = True if request.form.get(
+            "is_vegetarian") else False
+        is_vegan = True if request.form.get(
+            "is_vegan") else False
+        is_gluten_free = True if request.form.get(
+            "is_gluten_free") else False
+        is_dairy_free = True if request.form.get(
+            "is_dairy_free") else False
         recipe = {
             "pizza_name": request.form.get("pizza_name"),
             "image_url": request.form.get("image_url"),
@@ -169,14 +169,14 @@ def view_recipe(recipe_id):
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
-        is_vegetarian = "true" if request.form.get(
-            "is_vegetarian") else "false"
-        is_vegan = "true" if request.form.get(
-            "is_vegan") else "false"
-        is_gluten_free = "true" if request.form.get(
-            "is_gluten_free") else "false"
-        is_dairy_free = "true" if request.form.get(
-            "is_dairy_free") else "false"
+        is_vegetarian = True if request.form.get(
+            "is_vegetarian") else False
+        is_vegan = True if request.form.get(
+            "is_vegan") else False
+        is_gluten_free = True if request.form.get(
+            "is_gluten_free") else False
+        is_dairy_free = True if request.form.get(
+            "is_dairy_free") else False
         submit = {
             "pizza_name": request.form.get("pizza_name"),
             "image_url": request.form.get("image_url"),
