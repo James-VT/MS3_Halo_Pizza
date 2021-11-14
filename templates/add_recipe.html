@@ -28,7 +28,9 @@
                     <label for="ingredients">Ingredients</label>
                     <!--Below is where each new ingredient is added-->
                     <div id="ingredient-insert"></div>
-                    <div class="row recipe-buttons-div">
+                </div>
+                <div>
+                    <div class="row">
                         <span class="button-div">
                             <button type="button" id="next-ingredient-button" class="btn-large positive-button-style">Add ingredient</button>
                         </span>
@@ -40,12 +42,14 @@
             </div>
             <!--Instructions-->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12" id="cooking-steps-section">
                     <i class="fas fa-clipboard-list prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <textarea id="cooking_steps" name="cooking_steps" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate" required></textarea>
+                    <textarea id="cooking_steps" name="cooking_steps" type="text" minlength="5" maxlength="5000" class="materialize-textarea validate cooking_steps" required></textarea>
                     <label for="cooking_steps">Cooking instructions</label>
                     <div id="step-insert"></div>
+                </div>
+                <div>
                     <div class="row step-buttons-div">
                         <span class="button-div">
                             <button type="button" id="next-step-button" class="btn-large positive-button-style">Add step</button>
