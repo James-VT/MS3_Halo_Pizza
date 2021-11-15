@@ -56,24 +56,69 @@ Success!
 
 ---
 
-## Feature testing
+# Feature testing
 
 In this section I shall test the features of the site to ensure they themselves work, and I shall also test these against the user stories to demonstrate which user stories are fulfilled by the existence of these features.
 
-### CRUD functionality
+## CRUD functionality
 * A big part of this project was the successful implementation of CRUD functionality - create, read, update, delete. I shall start by testing these.
 
 ### Create
 * A user of this site can upload their recipes for other users and visitors to view, fulfilling the "create" aspect of CRUD. The top of the upload form can be seen below:
 
-![Top half of upload recipe form](docs/testing/featuretesting/uploadform1.png)
+![Top half of upload recipe form](docs/testing/featuretesting/crudtesting/createtesting/uploadform1.png)
 
-To test whether the form is acting as it should, we can enter some dummy information and check for it in the database after we've submitted it. Filling in the form allows us to test a couple of other features at the same time:
+To test whether the form is acting as it should, we can enter some dummy information and check for it in the database after we've submitted it. Filling in and submitting the form allows us to test a couple of other features at the same time:
 
-1. Add ingredient buttons
-The form provides functionality for a user to add ingredients for their recipes. One field for this is presented when a user first loads the form page. Beneath this sit two buttons: an add ingredient button, and a delete ingredient button. A user can click the "add ingredient" button to add an extra ingredient, and do this for all the ingredients they need.
+1. Add and delete ingredient and cooking step buttons
+The form provides functionality for a user to add ingredients for their recipes. One field for this is presented when a user first loads the form page. Beneath this sit two buttons: an "add ingredient" button, and a "delete ingredient" button. A user can click the "add ingredient" button to add an extra ingredient, and do this for all the ingredients they need. Underneath this, the same is true of the "cooking step" field - buttons are present to both add and remove fields for this.
 
+![Ingredient and cooking step fields, and buttons to add and remove extra fields for these](docs/testing/featuretesting/crudtesting/createtesting/adddeletebuttons.png)
 
+And here we can see it again, with more fields added via button clicks:
+
+![Ingredient and cooking step fields with buttons pressed to produce extras](docs/testing/featuretesting/crudtesting/createtesting/buttonspressed.png)
+
+And this time, with fields removed via the delete buttons:
+
+![Delete buttons used to remove fields](docs/testing/featuretesting/crudtesting/createtesting/deletebuttonspressed.png)
+
+The buttons are working fine.
+
+Returning to the form itself, here we have the bottom half of the form. I have now added some dummy data to the form to allow us to test whether it transfers properly to the database. Note that for the image URL field, the form autofills with the data seen here, which links to a generic open-source picture of a pizza from Wikimedia Commons. This is so that a user without a picture for their recipe can be provided with one. Observe the new types of field. We have categories in two forms; one category field is a drop-down menu, and the other exists as a series of checkboxes represented as sliders via a Materialize feature.
+
+![Bottom half of form with category fields](docs/testing/featuretesting/crudtesting/createtesting/bottomhalfofform.png)
+
+We can select items from within the dropdown menu in order to select into which categories each recipe will belong. I could have rolled these in with the Boolean checkboxes below, but as they are slightly more broad in the way the categories work (and person's idea of spicy is not the same as another's, for example; and what defines classic or adventurous is debatable) I have decided to treat these categories differently, allowing them to stand out for content creators as being more relative in terms of how they'd be categorised, as opposed to the attributes mentioned in the sliders which are easily labelled as being true or false. In this case, I have selected only "classic."
+
+![Category menu, with classic selected](docs/testing/featuretesting/crudtesting/createtesting/categorymenu.png)
+
+Beneath the categories, we have the sliders. This is for the person uploading the recipe to be able to relay to a user whether their pizzas are any of the things listed in the image, as these will naturally be pertinent for a user to know. As these are things which run on simple Boolean values, checkboxes seemed the natural way to go.
+
+![Checkbox sliders, with two checked and two unchecked](docs/testing/featuretesting/crudtesting/createtesting/checkboxsliders.png)
+
+We're all set. All that remains now is to click SUBMIT, and then we'll check the database in MongoDB to ensure everything has submitted correctly. This gives us an opportunity to check one other small thing:
+
+2. Flash messages
+Upon submitting the recipe, users are returned to the home page and presented with the following flash message:
+
+![Flash message thanking a user for submitting a recipe](docs/testing/flashmessagetest.png)
+
+Great! We know from this that our flash message is working correctly.
+
+And now, over to the database on MongoDB.
+
+3. MongoDB
+With our recipe submitted, we would expect to find our recipe in the collection in MongoDB. Sure enough, here we are:
+
+![Image of data successfully having made its way to MongoDB](docs/testing/featuretesting/crudtesting/createtesting/mongodbentry.png)
+
+Great! Everything's uploaded nicely to the database. A few things to note are the data types. Much of the data in the database is held as a string, which you can see from the simple key:value pairs with only a single entry. However, some are held as arrays and have successfully uploaded as such. This includes the ingredients and cooking steps fields, which have successfully received our data, but also the category_name field which is an array with only one item. It can hold more items if a user selects more than one category. Then we have the information from the checkboxes, each of which is stored as a Boolean data type, hence the simple "true" or "false" values for each.
+
+This mostly concludes the testing for our "create" functionality. What remains now is to test that it uploads properly to the site itself, which we shall do for our "read" testing, which comes next.
+
+### Read
+* A visitor to the site will want to read recipes uploaded by other users, and review those uploaded by themselves. This is the R, for "read" in CRUD.
 
 ---
 
@@ -94,7 +139,7 @@ At some point working on the base.html file, the various page links found themse
 Problem solved!
 ---
 
-### New ingredient fields failing to appear dynamically on button press
+### New ingredient fields failing to appear dynamically on button press - FIXED
 
 The page for a user to submit a recipe had an issue with the field for each new ingredient failing to generate when clicked by a user.
 
@@ -121,10 +166,12 @@ So setAttribute was expecting every method to be, essentially, a key:value pair 
 ```
 nextIngredient.setAttribute('required', 'true');
 ```
+
 This solved the problem.
+
 ---
 
-### Modal failing to open when a user tries to delete a recipe
+### Modal failing to open when a user tries to delete a recipe - FIXED
 
 While trying to createa a modal to confirm whether a user really wants to delete their recipe, I came across this problem:
 
