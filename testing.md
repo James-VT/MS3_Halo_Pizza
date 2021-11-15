@@ -56,6 +56,27 @@ Success!
 
 ---
 
+## Feature testing
+
+In this section I shall test the features of the site to ensure they themselves work, and I shall also test these against the user stories to demonstrate which user stories are fulfilled by the existence of these features.
+
+### CRUD functionality
+* A big part of this project was the successful implementation of CRUD functionality - create, read, update, delete. I shall start by testing these.
+
+### Create
+* A user of this site can upload their recipes for other users and visitors to view, fulfilling the "create" aspect of CRUD. The top of the upload form can be seen below:
+
+![Top half of upload recipe form](docs/testing/featuretesting/uploadform1.png)
+
+To test whether the form is acting as it should, we can enter some dummy information and check for it in the database after we've submitted it. Filling in the form allows us to test a couple of other features at the same time:
+
+1. Add ingredient buttons
+The form provides functionality for a user to add ingredients for their recipes. One field for this is presented when a user first loads the form page. Beneath this sit two buttons: an add ingredient button, and a delete ingredient button. A user can click the "add ingredient" button to add an extra ingredient, and do this for all the ingredients they need.
+
+
+
+---
+
 ## Bugs
 
 ### Navbar on two lines - FIXED

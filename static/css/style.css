@@ -289,6 +289,10 @@ I have adapted it slightly.*/
     background-color: #176421;
 }
 
+.modal-style {
+    padding: 20px;
+}
+
 /* ------------------Media queries */
 
 @media screen and (max-width: 810px) {
