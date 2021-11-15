@@ -101,3 +101,42 @@ So setAttribute was expecting every method to be, essentially, a key:value pair 
 nextIngredient.setAttribute('required', 'true');
 ```
 This solved the problem.
+---
+
+### Modal failing to open when a user tries to delete a recipe
+
+While trying to createa a modal to confirm whether a user really wants to delete their recipe, I came across this problem:
+
+![Image of a bson failure for my modal](docs/testing/bugs/modalfail.png)
+
+Fortunately, plenty of people on the Slack study group have had this same problem. The problem was this:
+
+```
+<div class="col s12 center-align">
+            {% if session.user|lower == recipe.created_by|lower %}
+                <a class="btn-large negative-button-style edit-button modal-trigger" href="RECIPE_DELETE">Delete recipe</a>
+                <!-- <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="submit btn-large negative-button-style edit-button">
+                    Delete recipe <i class="fas fa-trash-alt"></i>
+                </a> -->
+            {% endif %}
+        </div>
+        <!--Modal for deleting the recipe-->
+        <div id="RECIPE_DELETE" class="modal">
+            <div class="modal-content">
+                <h4>Confirm deletion</h4>
+                <p>Are you sure want to delete this recipe? Once it is deleted, you will be unable to get it back.</p>
+            </div>
+            <div class="modal_footer">
+                <a href="#!" class="modal-close positive-button-style btn-flat">Cancel</a>
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="modal-close negative-button-style btn-flat">I am sure I want to delete this recipe</a>
+            </div>
+        </div>
+```
+
+The href for the button to open the modal needs a hash symbol in it. I have marked the relevant href here, along with the id to which it must relate, in capital letters. The correct way of solving this is with this in the attributes for the a element that opens the modal:
+
+```
+href="#recipe_delete"
+```
+
+Problem solved!
