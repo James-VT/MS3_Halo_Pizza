@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('select').formSelect();
+    $('.modal').modal();
 
     /**The below code was taken from CodeInstitute's source code for their Task Manager project.
      * It sorts out Materialize's interpretation of what a <select> element should be, and
