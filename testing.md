@@ -306,7 +306,7 @@ Excellent! As expected, the changes have successfully been made via the edit rec
 
 | User story goal achieved by this feature | How was this achieved? |
 |---|---|
-3 Edit their submitted recipes. | Users are able to see the "edit" button on recipes they themselves have uploaded. Changes made to their recipes alter what is held in the database, and the corresponding recipe page changes to reflect these editions.
+| 3 Edit their submitted recipes. | Users are able to see the "edit" button on recipes they themselves have uploaded. Changes made to their recipes alter what is held in the database, and the corresponding recipe page changes to reflect these editions. |
 
 ---
 
@@ -316,7 +316,46 @@ Excellent! As expected, the changes have successfully been made via the edit rec
 
 If a user is logged in to the site and has uploaded a recipe, then when viewing that recipe they will see an extra couple of buttons, as has been established. We will focus on the delete button:
 
-![]()
+![Image of the edit and delete buttons on a recipe, visible only to the recipe owner](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png)
+
+Clicking this button presents the user with a little defensive programming: a modal asking them if they're sure they wish to delete the recipe. This is pictured below:
+
+![Image of the confirmation modal that's triggered when a user tries to delete a recipe](docs/testing/featuretesting/crudtesting/deletetesting/confirmdeletemodal.png)
+
+Clicking the button to cancel the deletion simply closes the modal. To delete the modal, we need to click the button that says "I am sure I want to delete this recipe." Once this button is clicked, the entrire recipe will be removed from the database collection, and so will be irretrievable. So to test this works, I shall click the button. These steps are recorded below.
+
+1. Ensure you are logged in and are viewing a recipe you have uploaded.
+2. Click the red "delete recipe" button.
+3. In the modal that appears, click the button that says "I am sure I want to delete this recipe."
+4. The expected result is that this wil delete the recipe.
+
+Evidence of result:
+
+![Evidence of the recipe page with our deleted recipe missing](docs/testing/featuretesting/crudtesting/deletetesting/recipegone.png)
+
+Result: success! As you can see from the image, where once there were four recipes there are now three!
+
+| User story goal achieved by this feature | How was this achieved? |
+|---|---|
+| 4 Delete their submitted recipes. | Users can delete their recipes via the delete function, visible to them on recipes they have uploaded to the site. |
+
+---
+
+## Other features
+
+### Register function
+
+Users can register an account with the site that allows them to upload and edit their recipes.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Username and password are required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
+| Registering an account | Correctly provide a username and password, then click register | Success - an account is created for the user. |
+| Usernames must be unique, and not match an existing one | Attempt to register with an existing username | Success - the user is presented with a flash message informing them that the username already exists, and the form fails to send. |
+
+| User story goal achieved by this feature | How was this achieved? |
+|---|---|
+| 5 Register with the site to submit recipes. | By the inclusion of a register form |
 
 ---
 
