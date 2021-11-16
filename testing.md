@@ -290,7 +290,15 @@ This function takes us to our home page, as demonstrated by the results of us cl
 
 In the above picture you can see the URL we were taken to upon clicking the cancel button - it is our home page.
 
-But to test the form itself, we are going to click the edit pizza button instead. having done this, I would expect to find the corresponding entry in the database changed to reflect the editions. And here they are:
+But to test the form itself, we are going to click the edit pizza button instead. Having done this, I first get a flash message confirming what I've done. That can be seen here:
+
+![Image of flash message shown after updating a recipe](docs/testing/featuretesting/crudtesting/updatetesting/recipeupdatedflash.png)
+
+And now we can check the databse. Having made editions, we would expect to find the corresponding entry in the database changed to reflect the editions. And here they are:
+
+![Image of the changes in the database](docs/testing/featuretesting/crudtesting/updatetesting/editeddbentry.png)
+
+Fantastic! The changes we made to the recipe have manifested themselves in the database. So if we now check the recipe page, we see this:
 
 
 
