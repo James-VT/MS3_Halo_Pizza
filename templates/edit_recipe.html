@@ -157,9 +157,9 @@
                     <a href="{{ url_for('get_recipes') }}" class="btn-large negative-button-style">
                         Cancel edit <i class="fas fa-times-circle right"></i>
                     </a>
-                    <button class="submit btn-large positive-button-style">
+                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="submit btn-large positive-button-style">
                         Edit pizza <i class="fas fa-edit"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </form>

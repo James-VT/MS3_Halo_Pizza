@@ -153,6 +153,147 @@ Note that in the above recipe, in the details section one can find the categorie
 
 ---
 
+### Update
+
+* A visitor to the site, having uploaded one or more recipes, may want to edit their recipes.
+
+If a user is logged in to the site and has uploaded a recipe, then when viewing that recipe they will see an extra couple of buttons:
+
+![Image of edit and delete buttons on view recipe page](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png)
+
+The purpose of the delete button, we shall come to in the fourth and final section of our CRUD functionality testing. But for now, we shall click on the edit button, which takes us to a familiar-looking page:
+
+![Edit page displayed with auto-filled fields](docs/testing/featuretesting/crudtesting/updatetesting/editpage.png)
+
+Note that in the image above, although we are looking at a similar page to the one via which we uploaded a recipe, we are looking at a different form. This is evidenced by the different page title seen above, and by the auto-filled field in the form. This is achieved by the following bits of code:
+
+* A code example for Materliaze's input fields is below:
+
+```
+<input id="pizza_name" name="pizza_name" minlength="4" value="{{ recipe.pizza_name }}" type="text" class="validate" required>
+```
+
+Note the double curly brackets surrounding recipe.pizza_name, as we are using Jinja.
+
+* Expected result of above code:
+    * Auto-filled input fields for editing. As evidenced in the pictures above and below, this was successful.
+
+---
+
+* A code example for Materialize's text areas:
+
+```
+<textarea id="short_description" name="short_description" minlength="5" class="materialize-textarea validate" required>{{ recipe.short_description }}</textarea>
+```
+
+For text areas, one should note that the curly brackets go between the opening and closing tags rather than a value field as with the inputs.
+
+* Expected result of above code:
+    * Auto-filled text area fields for editing. As evidenced in the pictures above and below, this was successful.
+
+---
+
+* A code example for Materialize's inputs with multiple fields:
+
+```
+{% for ingredient in recipe.ingredients %}
+    <input id="ingredients" name="ingredients" type="text" class="validate ingredient-input" minlength="4" value="{{ ingredient }}" required>
+    <label for="ingredients">Ingredients</label>
+{% endfor %}
+```
+
+As we have multiple ingredient fields along with multiple cooking step fields, we need to iterate over these to generate as many fields as we have ingredients/cooking steps.
+
+* Expected result of above code:
+    * Auto-filled input/text area fields for editing, and as many of these as required. As evidenced in the pictures above and below, this was successful.
+
+---
+
+* A code example for Materialize's select dropdown menus:
+
+```
+<select multiple id="category_name" name="category_name" class="validate" required>
+    <option value="" disabled>Select one or more</option>
+    {% for category in categories %}
+        {% if category.category_name in recipe.category_name %}
+            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+        {% else %}
+            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        {% endif %}
+    {% endfor %}
+</select>
+<label for="category_name" class="label-text">Pizza categories</label>
+```
+
+For this recipe, we would expect only the "classic" category to be found auto-filled within the field.
+
+* Expected result of above code:
+    * Autofilled select dropdown, in this case containing only the "classic" category. As evidenced by the picture below, this was successful.
+
+---
+
+* A code example for Materialize's checkboxes, autofilled from the Booleans held in our database:
+
+```
+<div class="switch">
+    <i class="fas fa-egg prefix icon-hide"></i>
+    <label for="is_vegetarian">
+        {% if recipe.is_vegetarian %}
+            <input type="checkbox" id="is_vegetarian" name="is_vegetarian" checked>
+        {% else %}
+            <input type="checkbox" id="is_vegetarian" name="is_vegetarian">
+        {% endif %}
+        <span class="lever"></span>
+        Vegetarian
+    </label>
+</div>
+```
+
+Here I have demonstrated only the vegetarian checkbox, as it is indicative of the others.
+
+* Expected result of above code:
+    * Auto-checked boxes filled from our database's Boolean values. As evidenced by the picture below, this was successful.
+
+---
+
+And here is the evidnece of the lower half of the form:
+
+![Evidence of lower half of form with auto-filled fields](docs/testing/featuretesting/crudtesting/updatetesting/editpagebottom.png)
+
+---
+
+Now I will test that the edit form is working by changing a few things. We'll remove an ingredient, add a cooking step, add a category and uncheck one checkbox. The result looks like this:
+
+![Edited form with changed fields and data](docs/testing/featuretesting/crudtesting/updatetesting/editedrecipeform.png)
+
+A user at this stage has two options. They can either submit the changes, or cancel them using the appropriate buttons at the bottom of the page. If we click the cancel button, we'd expect to be taken back to the home page and away from the edit form. This is performed by this piece of code the HTML:
+
+```
+<a href="{{ url_for('get_recipes') }}" class="btn-large negative-button-style">
+    Cancel edit <i class="fas fa-times-circle right"></i>
+</a>
+```
+
+Between the curly brackets in the code above, we're using Jinja to call the following function from our Python app.py file:
+
+```
+@app.route("/")
+@app.route("/get_recipes")
+def get_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("home.html", recipes=recipes)
+```
+
+This function takes us to our home page, as demonstrated by the results of us clicking the cancel edit button, seen below:
+
+![The URL of the page to which our cancel button has taken us](docs/testing/featuretesting/crudtesting/updatetesting/cancelbuttonroute.png)
+
+In the above picture you can see the URL we were taken to upon clicking the cancel button - it is our home page.
+
+But to test the form itself, we are going to click the edit pizza button instead. having done this, I would expect to find the corresponding entry in the database changed to reflect the editions. And here they are:
+
+
+
 ## Bugs
 
 ### Navbar on two lines - FIXED
