@@ -120,7 +120,7 @@ With our recipe submitted, we would expect to find our recipe in the collection 
 
 Great! Everything's uploaded nicely to the database. A few things to note are the data types. Much of the data in the database is held as a string, which you can see from the simple key:value pairs with only a single entry. However, some are held as arrays and have successfully uploaded as such. This includes the ingredients and cooking steps fields, which have successfully received our data, but also the category_name field which is an array with only one item. It can hold more items if a user selects more than one category. Then we have the information from the checkboxes, each of which is stored as a Boolean data type, hence the simple "true" or "false" values for each.
 
-| User story goal achieved by this feature | How as this achieved? |
+| User story goal achieved by this feature | How was this achieved? |
 |---|---|
 | 2 Upload their own recipes for others to see. | Users can submit recipes to the site via a link visible to logged-in users in the nav bar. The data they upload is stored in MongoDB. |
 
@@ -146,7 +146,7 @@ Everything we entered on that form has appeared as part of the recipe. From here
 
 Note that in the above recipe, in the details section one can find the categories, including the information from the checkboxes, and one can also find who owns/uploaded the recipe. More on that when we reach the update testing, which we'll come to next.
 
-| User story goal achieved by this feature | How as this achieved? |
+| User story goal achieved by this feature | How was this achieved? |
 |---|---|
 | 2 Upload their own recipes for others to see. | Once a user has uploaded a recipe, a page to hold that recipe's data is created. This is accessible from the home page and can be viewed by all users on its very own page. |
 | 1 Browse pizza recipes and ideas. | A user can find links to recipes from the home page, and upon clicking these cards will be taken to a page where all details on the recipe are presented. |
@@ -256,7 +256,7 @@ Here I have demonstrated only the vegetarian checkbox, as it is indicative of th
 
 ---
 
-And here is the evidnece of the lower half of the form:
+And here is the evidence of the lower half of the form:
 
 ![Evidence of lower half of form with auto-filled fields](docs/testing/featuretesting/crudtesting/updatetesting/editpagebottom.png)
 
@@ -300,7 +300,25 @@ And now we can check the databse. Having made editions, we would expect to find 
 
 Fantastic! The changes we made to the recipe have manifested themselves in the database. So if we now check the recipe page, we see this:
 
+![Image of recipe page with editiions successfully showing](docs/testing/featuretesting/crudtesting/updatetesting/editedrecipepage.png)
 
+Excellent! As expected, the changes have successfully been made via the edit recipe form, have gone from this to the database and from the database, they now show on the recipe's page on our site. Our update functionality is working as expected!
+
+| User story goal achieved by this feature | How was this achieved? |
+|---|---|
+3 Edit their submitted recipes. | Users are able to see the "edit" button on recipes they themselves have uploaded. Changes made to their recipes alter what is held in the database, and the corresponding recipe page changes to reflect these editions.
+
+---
+
+### Delete
+
+* A user of the site, having submitted one or more recipes, may wish to delete them from the site.
+
+If a user is logged in to the site and has uploaded a recipe, then when viewing that recipe they will see an extra couple of buttons, as has been established. We will focus on the delete button:
+
+![]()
+
+---
 
 ## Bugs
 
