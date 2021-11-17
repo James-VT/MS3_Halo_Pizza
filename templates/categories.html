@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row card-style">
+    <div class="row category-headliner">
         <h1 class="center-align">Browse by category</h1>
         {% if session.user|lower == "admin"|lower %}
                 <a href="{{ url_for('add_category') }}" class="btn-large positive-button-style-bottom-margin">Add category</a>

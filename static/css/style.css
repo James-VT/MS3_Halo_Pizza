@@ -140,6 +140,16 @@ hr {
     background-color: #176421;
 }
 
+.category-headliner {
+    border: 3px solid;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-align: center;
+    width: 50%;
+    margin-top: 20px;
+    background: #ffffff;
+    position: relative;
+}
+
 /* ------------------View recipe page */
 
 .view-recipe-headliner {

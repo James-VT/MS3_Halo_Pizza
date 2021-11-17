@@ -359,6 +359,20 @@ Users can register an account with the site that allows them to upload and edit 
 
 ---
 
+### Add category
+
+This is a CRUD function falling under "create," but as it's restricted to an admin and to keep the narrative above in the CRUD testing I'm including this separately here.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Category name and category description are both required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
+| Creating a new category | Correctly fill both fields - category name and category description, and click submit | Success - the new category is added to the database and appears on the categories page. |
+
+---
+
+
+---
+
 ## Bugs
 
 ### Navbar on two lines - FIXED
