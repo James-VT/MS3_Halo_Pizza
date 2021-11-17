@@ -393,7 +393,7 @@ In this section we will test each user story against the features of the site to
 | 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors are also receiving these where appropriate. | xx | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png) |
 | 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
 | 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
-| 10 | Delete recipe categories. | xx | x |
+| 10 | Delete recipe categories. | xx | [Buttons with options for editing, deleting and viewing categories](docs/testing/featuretesting/userstorytesting/categoryvieweditdelete.png) |
 | 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | xx | x |
 | 12 | Edit and delete users' recipes if required. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
 | 13 | Restrict access to certain features to be solely for the site admin. | xx | x |

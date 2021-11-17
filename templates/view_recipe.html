@@ -15,9 +15,6 @@
         <div class="col s12 center-align">
             {% if session.user|lower == recipe.created_by|lower %}
                 <a class="btn-large negative-button-style edit-button modal-trigger" href="#recipe_delete">Delete recipe</a>
-                <!-- <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="submit btn-large negative-button-style edit-button">
-                    Delete recipe <i class="fas fa-trash-alt"></i>
-                </a> -->
             {% endif %}
         </div>
         <!--Modal for deleting the recipe-->
