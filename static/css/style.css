@@ -135,6 +135,11 @@ hr {
     background-color: #176421;
 }
 
+.positive-button-style-bottom-margin {
+    margin-bottom: 20px;
+    background-color: #176421;
+}
+
 /* ------------------View recipe page */
 
 .view-recipe-headliner {

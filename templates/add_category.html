@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row card-style">
+        <h1 class="center-align">Add category</h1>
+    </div>
+
+    <div class="row card-panel form-style" id="ingredient-upload-form">
+        <form class="col s12" method="POST" action="{{ url_for('add_category') }}">
+            <!--Category name-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix"></i>
+                    <input id="category_name" name="category_name" type="text" class="validate" required>
+                    <label for="category_name">Category name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-feather-alt prefix"></i>
+                    <textarea id="category_description" name="category_description" class="materialize-textarea validate" required></textarea>
+                    <label for="category_description">Category description</label>
+                </div>
+            </div>
+             <!--Submit button-->
+             <div class="row">
+                <div class="col s12 center-align">
+                    <button class="submit btn-large positive-button-style">
+                        Submit category <i class="fas fa-thumbs-up"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
