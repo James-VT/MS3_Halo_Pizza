@@ -370,6 +370,30 @@ This is a CRUD function falling under "create," but as it's restricted to an adm
 
 ---
 
+# Testing against user stories
+
+In this section we will test each user story against the features of the site to ensure that every one is met. Although all user stories are already mentioned in the feature testing above, I present this as something of a summary to serve as a check list that all user needs are met for certainty's sake.
+
+## A visitor to the site will want to:
+
+| User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
+| 1 | Browse pizza recipes and ideas. | xx | x |
+| 2 | Upload their own recipes for others to see. | xx | x |
+| 3 | Edit their submitted recipes. | xx | x |
+| 4 | Delete their submitted recipes. | xx | x |
+| 5 | Register with the site to submit and edit recipes. | xx | x |
+| 6 | View recipes without having to register for the site or log in. | xx | x |
+| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful. | xx | x |
+
+## A site owner will want to:
+
+| User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
+| 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png) |
+| 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
+| 10 | Delete recipe categories. | xx | x |
+| 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | xx | x |
+| 12 | Edit and delete users' recipes if required. | xx | x |
+| 13 | Restrict access to certain features to be solely for the site admin. | xx | x |
 
 ---
 

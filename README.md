@@ -13,15 +13,17 @@ This app serves to provide a space where users can log in to share their pizza r
 2. Upload their own recipes for others to see.
 3. Edit their submitted recipes.
 4. Delete their submitted recipes.
-5. Register with the site to submit recipes.
+5. Register with the site to submit and edit recipes.
 6. View recipes without having to register for the site or log in.
+7. Receive on-screen confirmation that my creations, editions and deletions have been successful.
 
 ### A site owner will want to:
-1. Create themed collections of recipes.
-2. Edit recipe collections.
-3. Delete recipe collections.
-4. Review the details of user-submitted recipes so as to determine their place in collections.
-5. Promote their own or selected users' recipes.
+8. Create recipe categories to group recipes.
+9. Edit recipe categories.
+10. Delete recipe categories.
+11. Allow users to log in so they can submit recipes, hopefully encouraging return visits.
+12. Edit and delete users' recipes if required.
+13. Restrict access to certain features to be solely for the site admin.
 
 ---
 
