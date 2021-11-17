@@ -131,10 +131,6 @@ hr {
     margin: 40px;
 }
 
-.positive-button-style-no-padding {
-    background-color: #176421;
-}
-
 .positive-button-style-bottom-margin {
     margin-bottom: 20px;
     background-color: #176421;
@@ -148,6 +144,19 @@ hr {
     margin-top: 20px;
     background: #ffffff;
     position: relative;
+}
+
+/* ------------------Add categories page */
+
+#category-upload-form {
+    margin-bottom: 150px;
+}
+
+/* ------------------Edit categories page */
+
+#category-edit-form {
+    padding-top: 50px;
+    height: 50%;
 }
 
 /* ------------------View recipe page */
@@ -306,9 +315,17 @@ I have adapted it slightly.*/
     margin-top: 20px;
 }
 
+.positive-button-style-no-padding {
+    background-color: #176421;
+}
+
 .negative-button-style {
     background-color: #c2211e;
     margin-top: 20px;
+}
+
+.negative-button-style-no-margin {
+    background-color: #c2211e;
 }
 
 .pizza-button {
@@ -393,6 +410,12 @@ I have adapted it slightly.*/
 
 @media screen and (max-width: 1030px) and (min-width: 980px) {
     .icon-hide {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .small-hide {
         display: none;
     }
 }
