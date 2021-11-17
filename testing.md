@@ -378,21 +378,22 @@ In this section we will test each user story against the features of the site to
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
 | 1 | Browse pizza recipes and ideas. | xx | x |
-| 2 | Upload their own recipes for others to see. | xx | x |
-| 3 | Edit their submitted recipes. | xx | x |
-| 4 | Delete their submitted recipes. | xx | x |
+| 2 | Upload their own recipes for others to see. | xx | [Form for uploading a recipe](docs/testing/featuretesting/crudtesting/createtesting/uploadform1.png) |
+| 3 | Edit their submitted recipes. | xx | [Form for editing recipes](docs/testing/featuretesting/crudtesting/updatetesting/editpage.png), [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
+| 4 | Delete their submitted recipes. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
 | 5 | Register with the site to submit and edit recipes. | xx | x |
 | 6 | View recipes without having to register for the site or log in. | xx | x |
-| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful. | xx | x |
+
 
 ## A site owner will want to:
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
-| 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png) |
+| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors are also receiving these where appropriate. | xx | x |
+| 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
 | 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
 | 10 | Delete recipe categories. | xx | x |
 | 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | xx | x |
-| 12 | Edit and delete users' recipes if required. | xx | x |
+| 12 | Edit and delete users' recipes if required. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
 | 13 | Restrict access to certain features to be solely for the site admin. | xx | x |
 
 ---
