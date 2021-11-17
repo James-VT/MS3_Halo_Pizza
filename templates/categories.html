@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row card-style">
+        <h1 class="center-align">Browse by category</h1>
+    </div>
+
+    <div class="row categories-layout">
+        {% for category in categories %}
+            <div class="col s12 m6">
+                <div class="card category-card-style">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ category.category_name }}</span>
+                        <p>{{ category.category_description }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="btn-large positive-button-style-no-padding">View recipes</a>
+                    </div>
+                    {% if session.user|lower == "admin"|lower %}
+                        <div class="card-action">
+                            <a href="#" class="btn-large negative-button-style">Delete category</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

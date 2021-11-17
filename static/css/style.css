@@ -120,6 +120,21 @@ hr {
     position: relative;
 }
 
+/* ------------------View categories page */
+
+.category-card-style {
+    background-color: #341c1c;
+    border-radius: 10% 30% 0% 0% !important;
+}
+
+.categories-layout {
+    margin: 40px;
+}
+
+.positive-button-style-no-padding {
+    background-color: #176421;
+}
+
 /* ------------------View recipe page */
 
 .view-recipe-headliner {
