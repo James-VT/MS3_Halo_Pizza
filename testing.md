@@ -377,7 +377,8 @@ In this section we will test each user story against the features of the site to
 ## A visitor to the site will want to:
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
-| 1 | Browse pizza recipes and ideas. | xx | x |
+|--- | --- | --- | --- |
+| 1 | Browse pizza recipes and ideas. | xx | [Image of the main page of the site, and the recipes displayed](docs/testing/featuretesting/crudtesting/readtesting/homepagereadevidence.png) |
 | 2 | Upload their own recipes for others to see. | xx | [Form for uploading a recipe](docs/testing/featuretesting/crudtesting/createtesting/uploadform1.png) |
 | 3 | Edit their submitted recipes. | xx | [Form for editing recipes](docs/testing/featuretesting/crudtesting/updatetesting/editpage.png), [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
 | 4 | Delete their submitted recipes. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
@@ -388,7 +389,8 @@ In this section we will test each user story against the features of the site to
 ## A site owner will want to:
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
-| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors are also receiving these where appropriate. | xx | x |
+|--- | --- | --- | --- |
+| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors are also receiving these where appropriate. | xx | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png) |
 | 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
 | 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
 | 10 | Delete recipe categories. | xx | x |
