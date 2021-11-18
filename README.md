@@ -157,6 +157,9 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [RandomKeygen](https://randomkeygen.com/)
     * RandomKeygen is a free online service for generating passwords with optional levels of security, and was used in this project to generate a password for our environment variables.
 
+* [Spark Adobe](https://spark.adobe.com/sp/)
+    * Spark Adobe is a fremium online service for creating graphics and images. I have used it for the creation of the pizzacardbackground.png image.
+
 ### Tutorials
 * Code Institute's Task Manager walkthrough project
     * Much of the basic functionality, in particular the authentication and the basic functionality, are sourced from Code Institute's back end walkthrough project. Much of what's in Halo Pizzas' run.py file is adapted from that Task Manager app. While a lot of what's sourced are simple standard Flask conventions, this project owes a large debt to that one.

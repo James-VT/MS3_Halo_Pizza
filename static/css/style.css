@@ -86,7 +86,8 @@ hr {
 
 .card-image-background {
     border-radius: 10% !important;
-    background-color: darkseagreen;
+    background-image: url("../images/pizzacardbackground.png");
+    background-size: cover;
 }
 
 .homepage-headliner {
