@@ -4,7 +4,6 @@ body {
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     background-color: lightblue;
-    /* background-image: url({{ url_for('static', filename='static/css/images/background.jpg') }}); */
     background-image: url("../images/background1.jpg");
 }
 
@@ -15,11 +14,6 @@ h1, h2, h3, h4, h5 {
 main {
     flex: 1 0 auto;
 }
-
-/* .container {
-    margin-right: 0px;
-    margin-left: 0px;
-} */
 
 hr {
     width: 90%;
@@ -183,11 +177,8 @@ hr {
 .image-container-style {
     border: 3px solid;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    /* display: inline-block; */
     padding: 70px;
     text-align: center;
-    /* margin-left: 0;
-    margin-right: 0; */
     margin-top: 20px;
     background: #ffffff;
     position: relative;
@@ -226,10 +217,6 @@ hr {
     height: auto;
     max-width: 500px;
 }
-
-/* .section-header {
-    font-size: 200%;
-} */
 
 .pizza-title-picture {
     border: 2px solid;
@@ -291,8 +278,6 @@ I have adapted it slightly.*/
 .form-style {
     border: 3px solid;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    /* display: inline-block; */
-    /* padding: 70px 0; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
