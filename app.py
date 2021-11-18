@@ -115,7 +115,9 @@ def account(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("account.html", username=username)
+    recipes = list(mongo.db.recipes.find({"created_by": username}))
+
+    return render_template("account.html", username=username, recipes=recipes)
 
 
 @app.route("/logout")
