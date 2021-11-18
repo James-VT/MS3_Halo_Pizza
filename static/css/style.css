@@ -89,6 +89,20 @@ hr {
     background-color: darkseagreen;
 }
 
+.homepage-headliner {
+    border: 3px solid;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-align: center;
+    width: 50%;
+    margin-top: 20px;
+    background: #ffffff;
+    position: relative;
+}
+
+.card-content-padding {
+    padding: 0px 024px 24px 24px !important;
+}
+
 /* ------------------Register form */
 
 .register-form {

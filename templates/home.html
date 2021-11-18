@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="row homepage-headliner">
+    <h1 class="center-align">Halo Pizza Club</h1>
+    <p>Welcome to Halo Pizza Club - the place to find a pizza recipe for any occasion, and to share your own pizza creations. Browse our collection below, or search for something 
+        specific using the search bar. To share your recipes, create an account by clicking "create account" from the menu, or "log in" if you're already one of our lovely members. Happy cooking!
+    </p>
+</div>
 
     <div class="row">
         {% for recipe in recipes %}
@@ -13,7 +19,7 @@
                         </a>
                     </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content card-content-padding">
                     <h4>{{ recipe.pizza_name }}</h4>
                     <!-- <strong>{{ recipe.category_name }}</strong> -->
                     <p>{{ recipe.short_description }}</p>

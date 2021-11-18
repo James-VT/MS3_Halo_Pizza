@@ -156,6 +156,7 @@ def add_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
+
 # Below code pieced together from Code Institute's Task Manager's
 # edit section. To show the pages, we only need to get the info
 # through to the page by ID - everything else from the edit
@@ -192,7 +193,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe successfully updated!")
-      
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
@@ -222,7 +223,8 @@ def add_category():
         if request.method == "POST":
             category = {
                 "category_name": request.form.get("category_name"),
-                "category_description": request.form.get("category_description")
+                "category_description": request.form.get(
+                    "category_description")
             }
             mongo.db.categories.insert_one(category)
             flash("New category added successfully!")
