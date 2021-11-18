@@ -75,11 +75,11 @@ var cooking_steps_section = document.getElementById('cooking-steps-section');
  * Below code heavily borrowed from: https://www.youtube.com/watch?v=MLBLsxcB3Dc
  */
  next_step_button.onclick = function(){
-    var nextStep = document.createElement('input');
+    var nextStep = document.createElement('textarea');
     nextStep.setAttribute('type', 'text');
     nextStep.setAttribute('id', 'cooking_steps');
     nextStep.setAttribute('name', 'cooking_steps');
-    nextStep.setAttribute('class', 'cooking_steps');
+    nextStep.setAttribute('class', 'materialize-textarea validate cooking_steps');
     nextStep.setAttribute('minlength', '4');
     nextStep.setAttribute('required', 'true');
     nextStep.setAttribute('placeholder', 'Another step');
