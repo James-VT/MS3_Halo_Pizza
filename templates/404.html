@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="error-card">
+        <div class="row">
+            <div class="col s12">
+                <h1>It's Halo Pizza, but not as we know it</h1>
+                <p>Something's gone a bit Pete Tong!</p>
+                <p>Not all who wonder are lost, but you certainly are. Use either the navigation bar links above, or the button provided to make your way back to civilisation.</p>
+                <a class="btn-large positive-button-style" href="{{ url_for('get_recipes') }}">Home</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

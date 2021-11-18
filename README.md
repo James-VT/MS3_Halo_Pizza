@@ -164,6 +164,9 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * Dynamic Form Fields Javascript | Add & Remove https://www.youtube.com/watch?v=MLBLsxcB3Dc
     * This video helped a lot with some of the form elements, in particular the creation of new fields for adding and removing ingredients.
 
+* Border styling
+    * Much of the code for border-style and card-style was taken from https://codepen.io/piccalilli/pen/MPLzay. I've marked in the code where it was originally placed, but bits of it have been spliced and cannibalised for use elsewhere in the stylesheet.
+
 ---
 
 ## External libraries
@@ -178,6 +181,6 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * Why Materialize?
     * Materialize provides out-of-the-box features which make certain commonly-found features of web design quick and easy.
 
-## Credits
+## Individual credits
 
-During work on this project I had the misfortune to lose the workspace to a glitch the good folks at Gitpod never truly explained, but they sent me a downloadable version of the workspace. Huge thanks to Alan, tutor at Code Institute, and fellow students SuzyBee and Scott Böning for their patient assistance and encouragement at getting my project back up and running.
+During work on this project I had the misfortune to lose the workspace to a glitch the good folks at Gitpod never truly explained, but they sent me a downloadable version of the workspace. Huge thanks to Alan, tutor at Code Institute, and fellow students SuzyBee and Scott Böning for their patient assistance and encouragement at getting my project back up and running. And a big thank you to Andriy Saltanchuk, fellow student, for his suggestion of the "if session["user"]==admin:" code used to restrict page access to admins. Large thanks must also go to Slack channel leads former and current Amy O'Shea and Melinda Zhang - the former for her terrific webinar on how to plan for MS3 and some great examples of ideas and implementations, and the latter for being on hand in the channel for questions. A tremendous thank you goes also to my mentor Mo Shami for his help and guidance throughout.

@@ -216,14 +216,20 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name"),
-            "category_description": request.form.get("category_description")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New category added successfully!")
-        return redirect(url_for("get_categories"))
+    # This is an admin-only page
+    user = mongo.db.users.find_one({"username": session["user"]})
+    if session['user'] == 'admin':
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name"),
+                "category_description": request.form.get("category_description")
+            }
+            mongo.db.categories.insert_one(category)
+            flash("New category added successfully!")
+            return redirect(url_for("get_categories"))
+    else:
+        flash("This page is for site administrators only")
+        return render_template("403.html")
 
     return render_template("add_category.html")
 
@@ -248,6 +254,23 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category deleted successfully!")
     return redirect(url_for("get_categories"))
+
+
+# The below functions were guided from
+# https://flask.palletsprojects.com/en/2.0.x/errorhandling/#custom-error-pages
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template('403.html'), 403
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":

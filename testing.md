@@ -357,22 +357,21 @@ Users can register an account with the site that allows them to upload and edit 
 |---|---|
 | 5 Register with the site to submit recipes. | By the inclusion of a register form |
 
----
+### Create, edit, and delete categories as an admin
 
-### Add category
-
-This is a CRUD function falling under "create," but as it's restricted to an admin and to keep the narrative above in the CRUD testing I'm including this separately here.
+An admin can create categories by which recipes can be grouped, and subsequently viewed by visitors.
 
 | Feature | How to test | Result |
 | --- | --- | --- |
-| Category name and category description are both required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
-| Creating a new category | Correctly fill both fields - category name and category description, and click submit | Success - the new category is added to the database and appears on the categories page. |
+| Create category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Add category," enter the data for the category you wish to create, and click to confirm. You can then view this new category's entry in the database, and see it on the "Browse categories" page. | Success - a new category is created in the database and on the "Browse categories" page, and is selectable when uploading or editing a recipe. Users also receive a flash message confirming what they've done. |
+| Edit category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Edit category" from any category, alter the data for the category you wish to change, and click to confirm. You can then view this category's updated entry in the database, and see its changes on the "Browse categories" page. | Success - the changes are visible in the category's name and/or description, and in the database. Action confirmed to user via flash message. |
+| Delete category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Delete category" from any category, and click the button in the modal to confirm. This entry is then permanently removed from the database. | Success - the category is gone from the database. Action confirmed to user via flash message. |
 
 ---
 
 # Testing against user stories
 
-In this section we will test each user story against the features of the site to ensure that every one is met. Although all user stories are already mentioned in the feature testing above, I present this as something of a summary to serve as a check list that all user needs are met for certainty's sake.
+In this section we will test each user story against the features of the site to ensure that every one is met. Although some user stories are already mentioned in the feature testing above, I present this as something of a summary to serve as a check list that all user needs are met for certainty's sake.
 
 ## A visitor to the site will want to:
 
@@ -390,10 +389,10 @@ In this section we will test each user story against the features of the site to
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
 |--- | --- | --- | --- |
-| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors are also receiving these where appropriate. | xx | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png) |
+| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors to also receiving these where appropriate. | xx | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
 | 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
 | 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
-| 10 | Delete recipe categories. | xx | [Buttons with options for editing, deleting and viewing categories](docs/testing/featuretesting/userstorytesting/categoryvieweditdelete.png) |
+| 10 | Delete recipe categories. | xx | [Buttons with options for editing, deleting and viewing categories](docs/testing/featuretesting/userstorytesting/categoryvieweditdelete.png), [Modal to confirm the deletion of a category](docs/testing/featuretesting/userstorytesting/deletecategorymodal.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
 | 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | xx | x |
 | 12 | Edit and delete users' recipes if required. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
 | 13 | Restrict access to certain features to be solely for the site admin. | xx | x |
