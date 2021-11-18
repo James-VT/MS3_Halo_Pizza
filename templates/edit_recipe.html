@@ -78,8 +78,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
                     <!--Name attribute below must match the key in the database, as this is what Python uses to grab data from the form to put into the database-->
-                    <select multiple id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled>Select one or more</option>
+                    <select multiple id="category_name" name="category_name" class="validate">
+                        <option value="" disabled>Select one or more - this allows other users to see your recipe when searching by category</option>
                         {% for category in categories %}
                             <!--Need to use "in" below as users can select multiple categories, making it an array -->
                             {% if category.category_name in recipe.category_name %}
