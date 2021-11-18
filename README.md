@@ -135,6 +135,13 @@ Heroku allows us to host Python projects, instead of merely static sites which a
     * [HTML5](https://en.wikipedia.org/wiki/HTML5) was used for the content and structure of the site.
     * [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3) was used for the styling of the site.
     * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used for the interactivity of the site.
+    * [Python](https://www.python.org/) was used for the back end programming of the site.
+
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    * Flask was used to handle the templating for the site.
+
+* [Jinja](https://www.palletsprojects.com/p/jinja/)
+    * Jinja is a templating engine for Python, used to write Flask and other templating services.
 
 * [Balsamiq](https://balsamiq.com/)
     * Balsamiq was used to create the wireframes for this project. 

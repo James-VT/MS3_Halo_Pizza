@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <h3 class="center-align">
-                {{ username.capitalize() }}'s Profile
+                {{ username.capitalize() }}'s recipes:
             </h3>
             <div class="card-panel">
                 <div class="row">
@@ -25,6 +25,13 @@
                         </div>
                     </div>
                     {% endfor %}
+                    {% if recipes.length == 0 %}
+                    <div class="col s12 m6">
+                        <div class="card medium home-card-style">
+                            <p>It looks like you haven't uploaded any recipes yet. If you'd like to do so, click on "submit a recipe" in the navigation bar above.</p>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
