@@ -185,6 +185,16 @@ Most recipes are taken from [BBC Good Food](https://www.bbcgoodfood.com/). Other
 
 ---
 
+## Images
+
+https://upload.wikimedia.org/wikipedia/commons/d/d9/Pizza_18.jpg is from Wikimedia Commons, attribution: Kurt Kaiser, CC0, via Wikimedia Commons
+
+https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg is from Wikimedia Commons, attribution: Valerio Capello at English Wikipedia, CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons
+
+https://upload.wikimedia.org/wikipedia/commons/4/4c/Mega_calzone_-_ND0_3598_%288041009503%29.jpg is from Wikimedia Commons, attribution: N i c o l a from Fiumicino (Rome), Italy, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons
+
+---
+
 ## External libraries
 
 * [JQuery](https://jquery.com/download/#using-jquery-with-a-cdn)
