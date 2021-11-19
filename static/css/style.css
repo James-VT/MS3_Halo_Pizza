@@ -19,6 +19,10 @@ hr {
     width: 90%;
 }
 
+.margin-auto {
+    margin: auto;
+}
+
 /* ------------------Header */
 
 .navbar-style {

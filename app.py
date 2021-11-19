@@ -38,6 +38,15 @@ def get_recipes():
     return render_template("home.html", recipes=recipes)
 
 
+@app.route("/view_by_category/<category_id>")
+def view_by_category(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    recipes = mongo.db.recipes.find(
+        {"category_name": category["category_name"]})
+
+    return render_template("view_by_category.html", recipes=recipes, category=category)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")

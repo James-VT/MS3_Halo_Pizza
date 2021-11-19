@@ -179,6 +179,12 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 
 ---
 
+## Content
+
+Most recipes are taken from [BBC Good Food](https://www.bbcgoodfood.com/). Others are taken from [Tasty.co](https://tasty.co/).
+
+---
+
 ## External libraries
 
 * [JQuery](https://jquery.com/download/#using-jquery-with-a-cdn)

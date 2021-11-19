@@ -1,6 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Viewing all recipes in category:</h1>
+    <div class="row category-headliner">
+        <h1 class="center-align">Viewing all recipes in category: {{ category.category_name }}</h1>
+    </div>
+
+    <div class="row search-results-style">
+        {% for recipe in recipes %}
+        <div class="col s12 m6">
+            <div class="card medium home-card-style">
+                <div class="card-image card-image-background">
+                    <a href="#">
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                            <img src="{{ recipe.image_url }}" class="responsive-image home-page-image">
+                        </a>
+                    </a>
+                </div>
+                <div class="card-content card-content-padding">
+                    <h4>{{ recipe.pizza_name }}</h4>
+                    <!-- <strong>{{ recipe.category_name }}</strong> -->
+                    <p>{{ recipe.short_description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
