@@ -119,6 +119,20 @@ hr {
     margin: auto 0;
 }
 
+/* ------------------Pagination controls */
+
+.pagination-controls-style, .pagination-controls-style nav, .pagination-controls-style nav ul li {
+    background-color: #ffffff !important;
+    align-items: center !important;
+    text-align: center !important;
+    float: none !important;
+}
+
+.pagination li.active a {
+    font-weight: 1000;
+    color: black !important;
+}
+
 /* ------------------Register form */
 
 .register-form {

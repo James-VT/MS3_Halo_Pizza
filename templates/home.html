@@ -43,7 +43,15 @@
             </div>
         </div>
         {% endfor %}
+        <div class="col s12 m8 offset-m2">
+            <div class="pagination-controls-style">
+                {% if recipes.count() > 0 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% endif %}
+            </div>
+        </div>
     </div>
-    
+
 
 {% endblock %}

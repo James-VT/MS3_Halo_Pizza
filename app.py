@@ -2,6 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
+from flask_paginate import Pagination, get_page_args
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -27,6 +28,8 @@ mongo = PyMongo(app)
 
 # The below route function gets us landing on our homepage by default
 # and allows that page to access the recipes in our database.
+# To understand pagination, I consulted this:
+# https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
@@ -34,8 +37,21 @@ def get_recipes():
     # a true list, simply a Mongo Cursor Object. If
     # we wrap the entire find method in a Python list()
     # we turn it into a proper list.
-    recipes = list(mongo.db.recipes.find())
-    return render_template("home.html", recipes=recipes)
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 4
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
+    recipes = mongo.db.recipes.find()
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
+    # recipes = list(mongo.db.recipes.find())
+    return render_template("home.html", recipes=recipes_paginated,
+                            page=page,
+                            per_page=per_page,
+                            pagination=pagination)
 
 
 @app.route("/view_by_category/<category_id>")
