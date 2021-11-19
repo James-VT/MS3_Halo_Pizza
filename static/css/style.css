@@ -97,11 +97,22 @@ hr {
     width: 50%;
     margin-top: 20px;
     background: #ffffff;
+    padding: 20px;
     position: relative;
 }
 
 .card-content-padding {
     padding: 0px 024px 24px 24px !important;
+}
+
+/* ------------------Search bar */
+
+.search-bar-style {
+    width: 50%;
+}
+
+.search-results-style {
+    margin: auto;
 }
 
 /* ------------------Register form */
