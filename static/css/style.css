@@ -116,7 +116,7 @@ hr {
 }
 
 .search-results-style {
-    margin: auto;
+    margin: auto 0;
 }
 
 /* ------------------Register form */
