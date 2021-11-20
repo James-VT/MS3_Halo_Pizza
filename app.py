@@ -150,10 +150,11 @@ def account(username):
         offset_parameter='offset')
     per_page = 4
     offset = (page - 1) * per_page
-    total = mongo.db.recipes.find().count()
+    # total = mongo.db.recipes.find().count()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = list(mongo.db.recipes.find({"created_by": username}))
+    total = len(recipes)
     recipes_paginated = recipes[offset: offset + per_page]
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
