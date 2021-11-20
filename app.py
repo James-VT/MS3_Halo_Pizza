@@ -48,7 +48,7 @@ def get_recipes():
     pagination = Pagination(page=page, per_page=per_page,
                             total=total, css_framework='materializecss')
     # recipes = list(mongo.db.recipes.find())
-    return render_template("home.html", recipes=recipes_paginated,
+    return render_template("index.html", recipes=recipes_paginated,
                             page=page,
                             per_page=per_page,
                             pagination=pagination)
