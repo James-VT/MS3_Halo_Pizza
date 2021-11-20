@@ -65,6 +65,98 @@ Wireframes for this project were created using Balsamiq. All images linked below
 
 ---
 
+# Database
+
+Below is the physical database model of this project:
+
+![Database schema](static/images/database/schema.png)
+
+The database itself is a NoSQL database, held on MongoDB. You can see the data types of everything stored in it, and the links point to how the relationships work. For example, when a user creates a recipe, their username is recorded and stored in the "created_by" field. That way ownership can be restricted to one person, and this person is the only user who can edit and delete that recipe other than the site administrator. Likewise, the category chosen by the user is also recorded so that visitors who wish to view recipes in a particular category will find it there. (Note that users are not required to choose a category, merely recommended to do so. The reason for this is that all recipes can be viewed and searched for regardless of whether a category is chosen, and some users may not feel their recipe falls into any of the available categories.)
+
+Some code below demonstrates how this works:
+
+```
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(
+                request.form.get("password"))
+            }
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Congratulations, you have successfully created your account!")
+        return redirect(url_for("account", username=session["user"]))
+    return render_template("register.html")
+```
+
+The above code handles the registration functionality. You can see how the username entered by the aspiring user is checked against what exists in the database already to avoid duplicates. This is important, as the username itself is what is used to mark ownership of each recipe instead of, for example, the ObjectId. Here's an example of what's created by this code in the database:
+
+![Example of users collection document in database](static/images/database/usersexample.png)
+
+So when a user has joined up, they can submit a recipe. How does that look vis-a-vis our database? First, observe the code below that makes the upload happen:
+
+```
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    if request.method == "POST":
+        is_vegetarian = True if request.form.get(
+            "is_vegetarian") else False
+        is_vegan = True if request.form.get(
+            "is_vegan") else False
+        is_gluten_free = True if request.form.get(
+            "is_gluten_free") else False
+        is_dairy_free = True if request.form.get(
+            "is_dairy_free") else False
+        recipe = {
+            "pizza_name": request.form.get("pizza_name"),
+            "image_url": request.form.get("image_url"),
+            "short_description": request.form.get("short_description"),
+            "category_name": request.form.getlist("category_name"),
+            "ingredients": request.form.getlist("ingredients"),
+            "cooking_steps": request.form.getlist("cooking_steps"),
+            "is_vegetarian": is_vegetarian,
+            "is_vegan": is_vegan,
+            "is_gluten_free": is_gluten_free,
+            "is_dairy_free": is_dairy_free,
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Thank you for submitting your recipe!")
+        return redirect(url_for("get_recipes"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
+```
+
+And below, the resultant entry in our recipes collection:
+
+![Example entry from the recipes collection](static/images/database/recipesexample.png)
+
+As mentioned, the thing that is recorded to determine ownership of the recipe is the username - in this case, swagged from the session cookie. The categories chosen by a user are recorded, and these are stored as an array within the recipes collection, as seen in our diagram above. These are stored as an array as the user may choose more than one, but each exists within its own entry in the categories cluster, complete with their own description. That brings us to how the categories are used.
+
+```
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+```
+
+The code to generate our page that allows a user to browse recipes by category is simple. Each option on the page is generated by what's in the collection, and it displays their short_description value. Then when a user clicks to view a category, only the recipes with the category on which they clicked are displayed. Below is an example from that database:
+
+![Example entry from the categories collection](static/images/database/categoriesexample.png)
+
+---
+
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
 
