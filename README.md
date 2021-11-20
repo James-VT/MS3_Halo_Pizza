@@ -48,6 +48,23 @@ Dark Sienna will be our back-up colour, and a bit of a wildcard option. Coolors 
 
 ---
 
+# Wireframes
+
+Wireframes for this project were created using Balsamiq. All images linked below contain wireframes for mobile, tablet and desktop views.
+
+| Page | Wireframe |
+|---|---|
+| Home page | [Homepage all screens](static/images/wireframes/homepage.png) |
+| Log in/register page | [Log in and register pages all screens](static/images/wireframes/loginregisterpage.png) |
+| Category selection page | [Catergory selection page all screens](static/images/wireframes/categorypage.png) |
+| Error pages | [Error pages all screens](static/images/wireframes/errorpagesms3.png) |
+| Recipe pages | [Recipe pages all screens](static/images/wireframes/recipeviewms3.png) |
+| User submitted recipe page | [User's own recipes page all screens](static/images/wireframes/userrecipesms3.png) |
+| Edit and submit recipe page | [Form for submitting and editing recipes all screens](static/images/wireframes/submiteditrecipems3.png) |
+| View recipes by category page | [Category recipes page all screens](static/images/wireframes/viewbycategorypagems3.png) |
+
+---
+
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
 
