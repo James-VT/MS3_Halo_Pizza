@@ -57,10 +57,23 @@ def get_recipes():
 @app.route("/view_by_category/<category_id>")
 def view_by_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    recipes = mongo.db.recipes.find(
-        {"category_name": category["category_name"]})
+    recipes = list(mongo.db.recipes.find(
+        {"category_name": category["category_name"]}))
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 4
+    offset = (page - 1) * per_page
+    total = len(recipes)
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
 
-    return render_template("view_by_category.html", recipes=recipes, category=category)
+    return render_template("view_by_category.html", recipes=recipes_paginated,
+                            category=category,
+                            page=page,
+                            per_page=per_page,
+                            pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -150,7 +163,6 @@ def account(username):
         offset_parameter='offset')
     per_page = 4
     offset = (page - 1) * per_page
-    # total = mongo.db.recipes.find().count()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = list(mongo.db.recipes.find({"created_by": username}))

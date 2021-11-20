@@ -24,6 +24,14 @@
             </div>
         </div>
         {% endfor %}
+        <div class="col s12 m8 offset-m2">
+            {% if recipes|length > 0 %}
+            <div class="pagination-controls-style">
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+            </div>
+            {% endif %}
+        </div>
     </div>
 
 {% endblock %}
