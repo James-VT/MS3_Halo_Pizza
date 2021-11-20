@@ -172,6 +172,10 @@ hr {
     background: #ffffff;
 }
 
+.admin-notice {
+    color: red;
+}
+
 /* ------------------View categories page */
 
 .category-card-style {

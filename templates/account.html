@@ -1,41 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="account-card">
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <h3 class="center-align">
-                {{ username.capitalize() }}'s recipes:
-            </h3>
-            <div class="card-panel">
-                <div class="row">
-                    {% for recipe in recipes %}
-                    <div class="col s12 m6">
-                        <div class="card medium home-card-style">
-                            <div class="card-image card-image-background">
-                                <a href="#">
-                                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                        <img src="{{ recipe.image_url }}" class="responsive-image home-page-image">
-                                    </a>
-                                </a>
-                            </div>
-                            <div class="card-content card-content-padding">
-                                <h4>{{ recipe.pizza_name }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    {% if recipes.length == 0 %}
-                    <div class="col s12 m6">
-                        <div class="card medium home-card-style">
-                            <p>It looks like you haven't uploaded any recipes yet. If you'd like to do so, click on "submit a recipe" in the navigation bar above.</p>
-                        </div>
-                    </div>
-                    {% endif %}
+
+    <div class="row homepage-headliner">
+        <h3 class="center-align">
+            {{ username.capitalize() }}'s recipes:
+        </h3>
+        <p>All recipes created by you can be seen here. If you wish to edit or delete anything, click on the recipe card and
+            you can make changes from the recipe page.</p>
+        {% if session.user|lower == "admin"|lower %}
+        <p class="admin-notice">As admin, you can view all recipes and make changes to these as required from the recipes'
+            pages.</p>
+        {% if recipes.length == 0 %}
+            <div class="col s12 m6">
+                <div class="card medium home-card-style">
+                    <p>It looks like you haven't uploaded any recipes yet. If you'd like to do so, click on
+                        "submit a recipe" in the navigation bar above.</p>
+                </div>
+            </div>
+        {% endif %}
+        {% endif %}
+    </div>
+    <div class="row search-results-style">
+        {% for recipe in recipes %}
+        <div class="col s12 m6">
+            <div class="card medium home-card-style">
+                <div class="card-image card-image-background">
+                    <a href="#">
+                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                            <img src="{{ recipe.image_url }}" class="responsive-image home-page-image">
+                        </a>
+                    </a>
+                </div>
+                <div class="card-content card-content-padding">
+                    <h4>{{ recipe.pizza_name }}</h4>
                 </div>
             </div>
         </div>
+        {% endfor %}
+        <div class="col s12 m8 offset-m2">
+            <div class="pagination-controls-style">
+                {% if recipes|length > 0 %}
+                    {{ pagination.links }}
+                    {{ pagination.info }}
+                {% endif %}
+            </div>
+        </div>
     </div>
-</div>
 
 {% endblock %}

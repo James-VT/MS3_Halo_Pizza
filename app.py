@@ -145,11 +145,24 @@ def login():
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
     # grab the session user's username from db
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page',
+        offset_parameter='offset')
+    per_page = 4
+    offset = (page - 1) * per_page
+    total = mongo.db.recipes.find().count()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = list(mongo.db.recipes.find({"created_by": username}))
+    recipes_paginated = recipes[offset: offset + per_page]
+    pagination = Pagination(page=page, per_page=per_page,
+                            total=total, css_framework='materializecss')
 
-    return render_template("account.html", username=username, recipes=recipes)
+    return render_template("account.html", username=username,
+                            recipes=recipes_paginated,
+                            page=page,
+                            per_page=per_page,
+                            pagination=pagination)
 
 
 @app.route("/logout")
@@ -222,8 +235,7 @@ def edit_recipe(recipe_id):
             "is_vegetarian": is_vegetarian,
             "is_vegan": is_vegan,
             "is_gluten_free": is_gluten_free,
-            "is_dairy_free": is_dairy_free,
-            "created_by": session["user"]
+            "is_dairy_free": is_dairy_free
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe successfully updated!")

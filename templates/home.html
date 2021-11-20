@@ -29,10 +29,8 @@
         <div class="col s12 m6">
             <div class="card medium home-card-style">
                 <div class="card-image card-image-background">
-                    <a href="#">
-                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                            <img src="{{ recipe.image_url }}" class="responsive-image home-page-image">
-                        </a>
+                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                        <img src="{{ recipe.image_url }}" class="responsive-image home-page-image">
                     </a>
                 </div>
                 <div class="card-content card-content-padding">
