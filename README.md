@@ -1,5 +1,7 @@
 # Halo Pizza
 
+![Image of mock-ups to test site's responsiveness](static/images/mockups.png)
+
 https://ms3-halo-pizza.herokuapp.com/
 
 https://james-vt.github.io/MS3_Halo_Pizza/
