@@ -199,6 +199,21 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/delete_user/<username>")
+def delete_user(username):
+    """
+    This function deletes a user from the database
+    and all the recipes they submitted to the site.
+    """
+    recipes_for_deletion = list(
+        mongo.db.recipes.find({"created_by": username}))
+    for recipe in recipes_for_deletion:
+        mongo.db.recipes.remove(recipe)
+    mongo.db.users.remove({"username": username})
+    flash("Your account and recipes have been deleted")
+    return redirect(url_for("login"))
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     """

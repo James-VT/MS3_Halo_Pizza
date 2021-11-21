@@ -286,7 +286,10 @@ Heroku allows us to host Python projects, instead of merely static sites which a
     * This video helped a lot with some of the form elements, in particular the creation of new fields for adding and removing ingredients.
 
 * Border styling
-    * Much of the code for border-style and card-style was taken from https://codepen.io/piccalilli/pen/MPLzay. I've marked in the code where it was originally placed, but bits of it have been spliced and cannibalised for use elsewhere in the stylesheet.
+    * Much of the code for border-style and card-style was taken from https://codepen.io/piccalilli/pen/MPLzay. I've marked in the code where it was originally placed, but bits of it have been spliced and cannibalised for use elsewhere in the stylesheet so I include it here as a catch-all.
+
+* Delete user
+    * Although created for SQL, the video https://www.youtube.com/watch?v=w_VHabMAM1c was good at understanding what was required when deleting a user.
 
 ---
 

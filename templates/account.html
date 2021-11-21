@@ -17,6 +17,7 @@
         {% if recipes|length == 0 %}
             <p>It looks like you haven't uploaded any recipes yet. If you'd like to do so, click on "submit a recipe" in the navigation bar above.</p>
         {% endif %}
+        <a class="btn-large negative-button-style edit-button modal-trigger" href="{{ url_for('delete_user', username=username) }}">Delete account</a>
     </div>
     <div class="row search-results-style">
         {% for recipe in recipes %}
