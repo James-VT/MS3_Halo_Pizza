@@ -404,23 +404,38 @@ In this section we will test each user story against the features of the site to
 ### Lighthouse
 
 Home page
+
 ![Lighthouse home page validator evidence](docs/testing/validators/homepagelighthouse.png)
 
 Browse by category page
+
 ![Category page validator evidence](docs/testing/validators/categorypagelighthouse.png)
 
 Account page
+
 ![Account user recipes validator evidence](docs/testing/validators/accountpagelighthouse.png)
 
 Upload recipe page
+
 ![Upload recipe page validator evidence](docs/testing/validators/uploadrecipelighthouse.png)
 
 View by category page
+
 ![View by category page validator evidence](docs/testing/validators/viewbycategorylighthouse.png)
 
 View recipe page
+
 ![View recipe pasge validator evidence](docs/testing/validators/recipepagelighthouse.png)
 
+---
+
+### PEP8
+
+PEP8 is a standard by which Python code can be measured for consistent standards of indentation among other things. I ran my app.py file through it and it was given the all clear.
+
+![All right from PEP8](docs/testing/validators/pep8validator.png)
+
+---
 
 ## Bugs
 
@@ -516,3 +531,9 @@ Problem solved!
 [Validator testing for upload recipe form](docs/testing/validators/uploadrecipelighthouse.png)
 
 As you can see, this scores only 89% for accessibility. This is deeply frustrating as the solution it mentions - to include a label tag - is already fulfilled. If time allowed, I would investigate this further but for now it is an unsolved bug.
+
+---
+
+### Uncaught TypeError
+
+A TypeError

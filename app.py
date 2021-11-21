@@ -50,9 +50,9 @@ def get_recipes():
                             total=total, css_framework='materializecss')
     # recipes = list(mongo.db.recipes.find())
     return render_template("index.html", recipes=recipes_paginated,
-                            page=page,
-                            per_page=per_page,
-                            pagination=pagination)
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/view_by_category/<category_id>")
@@ -75,10 +75,10 @@ def view_by_category(category_id):
                             total=total, css_framework='materializecss')
 
     return render_template("view_by_category.html", recipes=recipes_paginated,
-                            category=category,
-                            page=page,
-                            per_page=per_page,
-                            pagination=pagination)
+                           category=category,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -87,7 +87,7 @@ def search():
     This makes our search function work using a
     text index we made earlier. How to do that
     came from Code Institute's tutorial, but I
-    broadened it a little
+    broadened it a little.
     """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
@@ -141,7 +141,8 @@ def login():
         if existing_user:
             # This ensures hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                                   existing_user["password"], request.form.get(
+                    "password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome back, {}".format(
                         request.form.get("username")))
@@ -182,10 +183,10 @@ def account(username):
                             total=total, css_framework='materializecss')
 
     return render_template("account.html", username=username,
-                            recipes=recipes_paginated,
-                            page=page,
-                            per_page=per_page,
-                            pagination=pagination)
+                           recipes=recipes_paginated,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination)
 
 
 @app.route("/logout")
@@ -384,7 +385,7 @@ def delete_category(category_id):
 @app.errorhandler(403)
 def forbidden(e):
     """
-    Error page
+    Error page for 403
     """
     return render_template('403.html'), 403
 
@@ -392,7 +393,7 @@ def forbidden(e):
 @app.errorhandler(404)
 def page_not_found(e):
     """
-    Error page
+    Error page for 404
     """
     return render_template('404.html'), 404
 
@@ -400,7 +401,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     """
-    Error page
+    Error page for 500
     """
     return render_template('500.html'), 500
 
