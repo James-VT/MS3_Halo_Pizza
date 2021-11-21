@@ -5,7 +5,6 @@
 
 /**Below is the functionality for adding additional ingredient fields to the add_recipe page */
 var next_ingredient_button = document.getElementById('next-ingredient-button');
-var ingredient_insert = document.getElementById('ingredient-insert');
 var delete_ingredient_button = document.getElementById('delete-ingredient-button');
 var ingredient_section = document.getElementById('ingredient-section');
 
@@ -22,18 +21,17 @@ next_ingredient_button.onclick = function(){
     nextIngredient.setAttribute('required', 'true');
     nextIngredient.setAttribute('placeholder', 'Another ingredient');
     ingredient_section.appendChild(nextIngredient);
-}
+};
 
 delete_ingredient_button.onclick = function(){
     var ingredient_fields = document.getElementsByClassName('ingredient-input');
     if(ingredient_fields.length > 1) {
         ingredient_section.removeChild(ingredient_fields[(ingredient_fields.length) - 1]);
     }
-}
+};
 
 /**Below is the functionality for adding additional cooking step fields to the add_recipe page */
 var next_step_button = document.getElementById('next-step-button');
-var step_insert = document.getElementById('step-insert');
 var delete_step_button = document.getElementById('delete-step-button');
 var cooking_steps_section = document.getElementById('cooking-steps-section');
 
@@ -50,11 +48,11 @@ next_step_button.onclick = function(){
     nextStep.setAttribute('required', 'true');
     nextStep.setAttribute('placeholder', 'Another step');
     cooking_steps_section.appendChild(nextStep);
-}
+};
 
 delete_step_button.onclick = function(){
     var step_fields = document.getElementsByClassName('cooking_steps');
     if(step_fields.length > 1) {
         cooking_steps_section.removeChild(step_fields[(step_fields.length) - 1]);
     }
-}
+};

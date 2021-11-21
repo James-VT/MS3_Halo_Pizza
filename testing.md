@@ -429,6 +429,24 @@ View recipe page
 
 ---
 
+### Jigsaw
+
+Jigsaw is used to validate CSS code. Below is evidence of my clean CSS code.
+
+![Evidence of CSS Jigsaw validation](docs/testing/validators/jigsawvalidator.png)
+
+---
+
+### JS Hint
+
+JS Hint is an online validator for JavaScript code. For this project we have two JS files: addeditjs.js and script.js. First is evidence of the successful validation of our addeditjs.js code:
+
+![Evidence of addeditjs.js validation](docs/testing/validators/jshintaddeditvalidator.png)
+
+And now our script.js file:
+
+![Evidence of script.js validation](docs/testing/validators/scriptjsvalidation.png)
+
 ### PEP8
 
 PEP8 is a standard by which Python code can be measured for consistent standards of indentation among other things. I ran my app.py file through it and it was given the all clear.
@@ -533,7 +551,3 @@ Problem solved!
 As you can see, this scores only 89% for accessibility. This is deeply frustrating as the solution it mentions - to include a label tag - is already fulfilled. If time allowed, I would investigate this further but for now it is an unsolved bug.
 
 ---
-
-### Uncaught TypeError
-
-A TypeError
