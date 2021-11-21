@@ -377,27 +377,50 @@ In this section we will test each user story against the features of the site to
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
 |--- | --- | --- | --- |
-| 1 | Browse pizza recipes and ideas. | xx | [Image of the main page of the site, and the recipes displayed](docs/testing/featuretesting/crudtesting/readtesting/homepagereadevidence.png) |
-| 2 | Upload their own recipes for others to see. | xx | [Form for uploading a recipe](docs/testing/featuretesting/crudtesting/createtesting/uploadform1.png) |
-| 3 | Edit their submitted recipes. | xx | [Form for editing recipes](docs/testing/featuretesting/crudtesting/updatetesting/editpage.png), [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
-| 4 | Delete their submitted recipes. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
-| 5 | Register with the site to submit and edit recipes. | xx | x |
-| 6 | View recipes without having to register for the site or log in. | xx | x |
+| 1 | Browse pizza recipes and ideas. | Pizzas can be browsed as a complete, paginated list from the home page, and by category from the "browse categories" page, and a user can browse their own creations. | [Image of the main page of the site, and the recipes displayed](docs/testing/featuretesting/crudtesting/readtesting/homepagereadevidence.png) |
+| 2 | Upload their own recipes for others to see. | Users, when signed into the site, can upload their recipes by clicking the "submit recipe" button. | [Form for uploading a recipe](docs/testing/featuretesting/crudtesting/createtesting/uploadform1.png) |
+| 3 | Edit their submitted recipes. | Users can see, when viewing their own pages, a button allowing them to edit the recipe. On clicking this form, they are taken to a form to update the recipe. | [Form for editing recipes](docs/testing/featuretesting/crudtesting/updatetesting/editpage.png), [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
+| 4 | Delete their submitted recipes. | A button exists to confirm with a user that they want to delete their recipes. On clicking this, a modal appears to confirm this decision. | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
+| 5 | Register with the site to submit and edit recipes. | Visitors can register an account with the site by which they can access member functionality, which includes the uploading and editing of recipes. | [Register form](docs/testing/featuretesting/userstorytesting/registerform.png) |
+| 6 | View recipes without having to register for the site or log in. | All recipes can be viewed without being logged in. | [Recipe card with log in and register links visible](docs/testing/featuretesting/userstorytesting/notloggedinhomepage.png) |
 
 
 ## A site owner will want to:
 
 | User story number | A user will want to: | How was this achieved? | Evidence of user story having been met |
 |--- | --- | --- | --- |
-| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors to also receiving these where appropriate. | xx | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
-| 8 | Create recipe categories to group recipes. | xx | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
-| 9 | Edit recipe categories. | xx | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
-| 10 | Delete recipe categories. | xx | [Buttons with options for editing, deleting and viewing categories](docs/testing/featuretesting/userstorytesting/categoryvieweditdelete.png), [Modal to confirm the deletion of a category](docs/testing/featuretesting/userstorytesting/deletecategorymodal.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
-| 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | xx | x |
-| 12 | Edit and delete users' recipes if required. | xx | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
-| 13 | Restrict access to certain features to be solely for the site admin. | xx | x |
+| 7 | Receive on-screen confirmation that my creations, editions and deletions have been successful, and for the visitors to also receiving these where appropriate. | Flash messages for interactions including logging in, uploading a recipe, editing a recipe, deleting a recipe and all this functionality for categories if site admin. | [Flash messages displayed for various data-handling functions such as creating, editing and deleting recipes](docs/testing/flashmessagetest.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
+| 8 | Create recipe categories to group recipes. | This can be done as admin from the "Browse by category" page. | [Category card of admin-created category](docs/testing/featuretesting/userstorytesting/addcategoryevidence.png), [Entry for created category in database](docs/testing/featuretesting/userstorytesting/newcategoryindb.png), [Form for adding categories](docs/testing/featuretesting/userstorytesting/addcategoryform.png) |
+| 9 | Edit recipe categories. | This can be done as admin from the "Browse by category" page. | [Form for editing recipes](docs/testing/featuretesting/userstorytesting/editcategoryform.png) |
+| 10 | Delete recipe categories. | This can be done as admin from the "Browse by category" page. | [Buttons with options for editing, deleting and viewing categories](docs/testing/featuretesting/userstorytesting/categoryvieweditdelete.png), [Modal to confirm the deletion of a category](docs/testing/featuretesting/userstorytesting/deletecategorymodal.png), [Message confirming category deleted](docs/testing/featuretesting/userstorytesting/deleteflash.png) |
+| 11 | Allow users to log in so they can submit recipes, hopefully encouraging return visits. | Users can log in via a link on the home page, taking them to a form. | [Image of home page with log in functionality visible](docs/testing/featuretesting/userstorytesting/notloggedinhomepage.png). [Image of the log in form](docs/testing/featuretesting/userstorytesting/loginform.png) |
+| 12 | Edit and delete users' recipes if required. | Aside from the users to whom the recipes belong, the only person to be able to edit or delete them is the admin. | [Buttons for editing and deleting a recipe](docs/testing/featuretesting/crudtesting/updatetesting/editdeletebuttons.png) |
+| 13 | Restrict access to certain features to be solely for the site admin. | Code in the right places ensures only the admin can access certain features, such as editing or deleting categories. | [Code restricting access to certain features to only an admin](docs/testing/featuretesting/userstorytesting/adminonlycode.png) |
 
 ---
+
+## Validators
+
+### Lighthouse
+
+Home page
+![Lighthouse home page validator evidence](docs/testing/validators/homepagelighthouse.png)
+
+Browse by category page
+![Category page validator evidence](docs/testing/validators/categorypagelighthouse.png)
+
+Account page
+![Account user recipes validator evidence](docs/testing/validators/accountpagelighthouse.png)
+
+Upload recipe page
+![Upload recipe page validator evidence](docs/testing/validators/uploadrecipelighthouse.png)
+
+View by category page
+![View by category page validator evidence](docs/testing/validators/viewbycategorylighthouse.png)
+
+View recipe page
+![View recipe pasge validator evidence](docs/testing/validators/recipepagelighthouse.png)
+
 
 ## Bugs
 
@@ -485,3 +508,11 @@ href="#recipe_delete"
 ```
 
 Problem solved!
+
+---
+
+### Validator testing falling short
+
+[Validator testing for upload recipe form](docs/testing/validators/uploadrecipelighthouse.png)
+
+As you can see, this scores only 89% for accessibility. This is deeply frustrating as the solution it mentions - to include a label tag - is already fulfilled. If time allowed, I would investigate this further but for now it is an unsolved bug.

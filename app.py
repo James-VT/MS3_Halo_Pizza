@@ -14,9 +14,8 @@ if os.path.exists("env.py"):
 # named app.
 app = Flask(__name__)
 
-# The below code is where we pull our environment variables from our
-# env.py file and assign them to variables here so that they can be
-# used in our project.
+
+# Environment variables
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -26,17 +25,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# The below route function gets us landing on our homepage by default
-# and allows that page to access the recipes in our database.
 # To understand pagination, I consulted this:
 # https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    # The list of recipes coming from mongodb is not
-    # a true list, simply a Mongo Cursor Object. If
-    # we wrap the entire find method in a Python list()
-    # we turn it into a proper list.
+    """
+    The below route function gets us landing on our homepage by default
+    and allows that page to access the recipes in our database.
+    The list of recipes coming from mongodb is not
+    a true list, simply a Mongo Cursor Object. If
+    we wrap the entire find method in a Python list()
+    we turn it into a proper list.
+    """
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
@@ -56,6 +57,10 @@ def get_recipes():
 
 @app.route("/view_by_category/<category_id>")
 def view_by_category(category_id):
+    """
+    Allows a user to view recipes by category
+    having selected a category from our categories page
+    """
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     recipes = list(mongo.db.recipes.find(
         {"category_name": category["category_name"]}))
@@ -78,6 +83,12 @@ def view_by_category(category_id):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    This makes our search function work using a
+    text index we made earlier. How to do that
+    came from Code Institute's tutorial, but I
+    broadened it a little
+    """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("home.html", recipes=recipes)
@@ -86,40 +97,28 @@ def search():
 # The below route function is for our registration page
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Our register route, allowing users to sign up.
+    We check if the username already exists in the
+    db via truthiness, and if so it's no bueno.
+    The user is informed via flash message,
+    and is free to try again.
+    """
     if request.method == "POST":
-        # Here we check if the username exists already in db
-        # Everything in db stored in lower case, hence lower() method.
-        # existing_user will come back with a truthy value if
-        # it finds a username that matches the one entered
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
-# Checks if existing_user is truthy, which it will be if the
-# username already exists. Then, if it does, it will redirect
-# the user back to the register page to try again -
-# basically just resetting the page.
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
-# The below gathers the data entered into the form by the user,
-# and stores it in the "register" variable as a dictionary.
-# This acts as an "else" for the "if" above.
 
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(
                 request.form.get("password"))
             }
-        # The below goes into the users collection
-        # within MongoDB and, since we declared the
-        # register variable with the user's input made into
-        # a dictionary above, all we need to is drop that
-        # variable into it with the insert_one() method.
         mongo.db.users.insert_one(register)
 
-        # Puts our new user into "session" cookie
         session["user"] = request.form.get("username").lower()
         flash("Congratulations, you have successfully created your account!")
         return redirect(url_for("account", username=session["user"]))
@@ -128,6 +127,12 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Our login function checks whether the
+    username is in the db and if so, happy days.
+    It checks whether the hashed password is
+    the same as the one entered.
+    """
     if request.method == "POST":
         # This checks whether the username is in the db
         existing_user = mongo.db.users.find_one(
@@ -157,7 +162,12 @@ def login():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
-    # grab the session user's username from db
+    """
+    Presents the user with their recipes. All recipes
+    tagged as theirs as creator will be shown. The
+    session user's name is grabbed from the db and
+    matched.
+    """
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page',
         offset_parameter='offset')
@@ -180,6 +190,10 @@ def account(username):
 
 @app.route("/logout")
 def logout():
+    """
+    Logs a user out by taking their name off the
+    session cookie.
+    """
     flash("You have logged out. See you soon!")
     session.pop("user")
     return redirect(url_for("login"))
@@ -187,6 +201,12 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """
+    Adds a recipe to the database. Checkboxes are
+    stored as Booleans. Three arrays, so we used .getlist
+    instead of just .get for those. Links to the category
+    collection and the user collection.
+    """
     if request.method == "POST":
         is_vegetarian = True if request.form.get(
             "is_vegetarian") else False
@@ -217,18 +237,25 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
-# Below code pieced together from Code Institute's Task Manager's
-# edit section. To show the pages, we only need to get the info
-# through to the page by ID - everything else from the edit
-# section was unnecessary.
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
+    """
+    Shows the recipe. The html file and Jinja do most of the
+    work on this one. Clicking on the category button brings
+    back that collection.
+    """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("view_recipe.html", recipe=recipe)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """
+    Below code pieced together from Code Institute's Task Manager's
+    edit section. To show the pages, we only need to get the info
+    through to the page by ID - everything else from the edit
+    section was unnecessary.
+    """
     if request.method == "POST":
         is_vegetarian = True if request.form.get(
             "is_vegetarian") else False
@@ -258,11 +285,14 @@ def edit_recipe(recipe_id):
     return render_template(
         "edit_recipe.html", recipe=recipe, categories=categories)
 
-# return render_template(
-#         "edit_recipe.html", recipe=recipe, categories=categories
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """
+    Says auf weidershen to a recipe we don't want
+    anymore. That can be triggered by the recipe creator
+    or the admin.
+    """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe deleted")
     return redirect(url_for("get_recipes"))
@@ -270,13 +300,22 @@ def delete_recipe(recipe_id):
 
 @app.route("/get_categories")
 def get_categories():
+    """
+    Delves into the collection, comes back with the categories.
+    From this page, users select a category's pizzas to peruse.
+    """
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    # This is an admin-only page
+    """
+    This is an admin-only page allowing an admin to create
+    a new category to send to the database for safe keeping.
+    It asks for a description at the same time, shown with
+    the name on the browse categories page.
+    """
     user = mongo.db.users.find_one({"username": session["user"]})
     if session['user'] == 'admin':
         if request.method == "POST":
@@ -297,6 +336,10 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    """
+    Another admin only page, same as the last except this one's
+    for editing.
+    """
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -312,6 +355,10 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
+    """
+    Says au revoir to a category the admin doesn't want
+    anymore. Removes it by its _id.
+    """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category deleted successfully!")
     return redirect(url_for("get_categories"))
@@ -321,16 +368,25 @@ def delete_category(category_id):
 # https://flask.palletsprojects.com/en/2.0.x/errorhandling/#custom-error-pages
 @app.errorhandler(403)
 def forbidden(e):
+    """
+    Error page
+    """
     return render_template('403.html'), 403
 
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """
+    Error page
+    """
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(e):
+    """
+    Error page
+    """
     return render_template('500.html'), 500
 
 
