@@ -9,6 +9,34 @@ This website serves to provide a space where users can log in to share their piz
 
 ---
 
+# Table of contents
+
+* [Project overview](https://github.com/James-VT/MS3_Halo_Pizza#project-overview)
+
+* [UX](https://github.com/James-VT/MS3_Halo_Pizza#ux)
+    * [User stories](https://github.com/James-VT/MS3_Halo_Pizza#user-stories)
+
+* [Design](https://github.com/James-VT/MS3_Halo_Pizza#design)
+    * [Colour palette](https://github.com/James-VT/MS3_Halo_Pizza#colour-palette)
+    * [Wireframes](https://github.com/James-VT/MS3_Halo_Pizza#wireframes)
+    * [Database](https://github.com/James-VT/MS3_Halo_Pizza#database)
+
+* [Deployment](https://github.com/James-VT/MS3_Halo_Pizza#deployment)
+
+* [Credits](https://github.com/James-VT/MS3_Halo_Pizza#credits)
+    * [Technologies used](https://github.com/James-VT/MS3_Halo_Pizza#technologies-used)
+
+* [Tutorials](https://github.com/James-VT/MS3_Halo_Pizza#tutorials)
+
+* [Content](https://github.com/James-VT/MS3_Halo_Pizza#content)
+
+* [Images](https://github.com/James-VT/MS3_Halo_Pizza#images)
+
+* [External libraries](https://github.com/James-VT/MS3_Halo_Pizza#external-libraries)
+
+* [Individual credits](https://github.com/James-VT/MS3_Halo_Pizza#individual-credits)
+
+
 # UX
 
 The main aim of the site is the manipulation of database data - Create, Read, Update, Delete (CRUD for short) - all relating to the subject of pizza. The user experience is geared towards this, with all functions aimed at implementing or supporting these functions.
