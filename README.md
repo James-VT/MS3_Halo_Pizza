@@ -322,6 +322,9 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [Am I Responsive?](http://ami.responsivedesign.is/#)
     * This is where we created the header image for this README.
 
+* [favicon](favicon.io)
+    * Favicon was used to creat the site's favicon.
+
 
 ### Tutorials
 * Code Institute's Task Manager walkthrough project
