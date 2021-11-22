@@ -374,18 +374,19 @@ An admin can create categories by which recipes can be grouped, and subsequently
 | Edit category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Edit category" from any category, alter the data for the category you wish to change, and click to confirm. You can then view this category's updated entry in the database, and see its changes on the "Browse categories" page. | Success - the changes are visible in the category's name and/or description, and in the database. Action confirmed to user via flash message. |
 | Delete category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Delete category" from any category, and click the button in the modal to confirm. This entry is then permanently removed from the database. | Success - the category is gone from the database. Action confirmed to user via flash message. |
 
+---
 
 ## Other features
 
-
-### Log in function
+### Log in/out function
 
 Users with accounts can log in to the site after having been away from it.
 
 | Feature | How to test | Result |
 | --- | --- | --- |
 | Username and password are required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
-| Logging in to the site | Enter your username and password into the appropriate fields. Click the button to log in. | Success - user is logged in.
+| Logging in to the site | Enter your username and password into the appropriate fields. Click the button to log in. | Success - user is logged in. |
+| Log out of the site | Having logged in, click the log out option in the bar. | Success - user is logged out. |
 
 ---
 
@@ -397,7 +398,15 @@ The site features a search bar on its home page, by which users can search for k
 
 I can test this works by clicking the "search" button. (The reset button clears the entry and refreshes the page. This can be testing by clicking it.) If I click the search button, here's what I am presented with:
 
-![Image of egg search results]()
+![Image of egg search results](docs/testing/featuretesting/crudtesting/locatetesting/eggsearchresults.png)
+
+We see these three recipes. On clicking one of them, I can confirm that it contains not just one egg, but two:
+
+![Image of recipe with egg ingredient](docs/testing/featuretesting/crudtesting/locatetesting/eggingredient.png)
+
+This is great, as it shows the terms do not have to be exact, and can contain only part of a word and still work. Success!
+
+---
 
 # Testing against user stories
 

@@ -191,6 +191,12 @@ The code to generate our page that allows a user to browse recipes by category i
 
 ---
 
+# Testing
+
+* The testing section, being on the large side, is in a separate file, [here](testing.md).
+
+---
+
 # Deployment
  Here I'll explain how to deploy/how I deployed the website to GitHub and how to run it locally. 
 
