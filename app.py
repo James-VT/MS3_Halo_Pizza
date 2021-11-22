@@ -89,20 +89,8 @@ def search():
     broadened it a little.
     """
     query = request.form.get("query")
-    page, per_page, offset = get_page_args(
-        page_parameter='page', per_page_parameter='per_page',
-        offset_parameter='offset')
-    per_page = 4
-    offset = (page - 1) * per_page
-    total = mongo.db.recipes.find({"$text": {"$search": query}}).count()
     recipes = mongo.db.recipes.find({"$text": {"$search": query}})
-    recipes_paginated = recipes[offset: offset + per_page]
-    pagination = Pagination(page=page, per_page=per_page,
-                            total=total, css_framework='materializecss')
-    return render_template("index.html", recipes=recipes_paginated,
-                           page=page,
-                           per_page=per_page,
-                           pagination=pagination)
+    return render_template("searchresults.html", recipes=recipes)
 
 
 # The below route function is for our registration page
