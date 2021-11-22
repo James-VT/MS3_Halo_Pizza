@@ -357,6 +357,28 @@ Users can register an account with the site that allows them to upload and edit 
 |---|---|
 | 5 Register with the site to submit recipes. | By the inclusion of a register form |
 
+---
+
+### Log in function
+
+Users with accounts can log in to the site after having been away from it.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Username and password are required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
+| Logging in to the site | Enter your username and password into the appropriate fields. Click the button to log in. | Success - user is logged in.
+
+---
+
+### Browse and view recipes
+
+Users, whether logged in or not, can view recipes on the site.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| The ability to browse all recipes from the home page, via a paginated set of recipes. | Visit the home page, see the recipes, click through the pagination. | Success - four to a page, the recipes present themselves to a user. |
+| View a specific recipe | Click on any recipe to view it. | Success - clicking a recipe takes you to a page showing what that recipe is - its steps, its details, its ingredients. |
+
 ### Create, edit, and delete categories as an admin
 
 An admin can create categories by which recipes can be grouped, and subsequently viewed by visitors.
@@ -415,9 +437,29 @@ Account page
 
 ![Account user recipes validator evidence](docs/testing/validators/accountpagelighthouse.png)
 
+Add category page
+
+![Add category page validator evidence](docs/testing/validators/addcategorylighthouse.png)
+
+Edit category page
+
+![Edit category page validator evidence](docs/testing/validators/editcategorylighthouse.png)
+
 Upload recipe page
 
 ![Upload recipe page validator evidence](docs/testing/validators/uploadrecipelighthouse.png)
+
+Edit recipe page
+
+![Edit recipe page validator evidence](docs/testing/validators/editrecipelighthouse.png)
+
+Log in page
+
+![Log in validator evidence](docs/testing/validators/registerformlighthouse.png)
+
+Register page
+
+![Register page validator evidence](docs/testing/validators/registerformlighthouse.png)
 
 View by category page
 
@@ -548,6 +590,10 @@ Problem solved!
 
 [Validator testing for upload recipe form](docs/testing/validators/uploadrecipelighthouse.png)
 
-As you can see, this scores only 89% for accessibility. This is deeply frustrating as the solution it mentions - to include a label tag - is already fulfilled. If time allowed, I would investigate this further but for now it is an unsolved bug.
+![Edit recipe page validator evidence](docs/testing/validators/editrecipelighthouse.png)
+
+As you can see, the upload form scores only 89% for accessibility. This is deeply frustrating as the solution it mentions - to include a label tag - is already fulfilled. If time allowed, I would investigate this further but for now it is an unsolved bug.
+
+The latter problem is also tedious, as the fields are dynamically generated for extra ingredients and cooking steps. The identical labels on these are causing it to fail, but for the functionality and uploading this is necessary.
 
 ---

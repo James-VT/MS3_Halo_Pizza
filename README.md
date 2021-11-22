@@ -353,6 +353,9 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [favicon](favicon.io)
     * Favicon was used to creat the site's favicon.
 
+* [Autoprefixer](https://autoprefixer.github.io/)
+    * Autoprefixer was used to generate necessary prefixes to ensure site styling remains consistent across browsers.
+
 
 ### Tutorials
 * Code Institute's Task Manager walkthrough project
