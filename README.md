@@ -2,12 +2,16 @@
 
 ![Image of mock-ups to test site's responsiveness](static/images/mockups.png)
 
-https://ms3-halo-pizza.herokuapp.com/
-
-https://james-vt.github.io/MS3_Halo_Pizza/
+The live site for the Halo Pizza Club can  be found [here](https://ms3-halo-pizza.herokuapp.com/).
 
 # Project overview
-This app serves to provide a space where users can log in to share their pizza recipes, view other users' submitted recipes, and edit recipes they have submitted. The site requires users to log in to submit and edit recipes, and features authentication to securely facilitate this.
+This website serves to provide a space where users can log in to share their pizza recipes, view other users' submitted recipes, and edit recipes they have submitted. The site requires users to log in to submit and edit recipes, and features authentication to securely facilitate this. A visitor to the site will be visiting for one of two basic reasons: to find information on pizza recipes or to share it. The functions of the site facilitate this. The owner of the site will have similar goals, but with a slight lean towards curation of these recipes. To this end, a site owner will have control of the categorisation of recipes and the ability to edit those of other users if necessary.
+
+---
+
+# UX
+
+The main aim of the site is the manipulation of database data - Create, Read, Update, Delete (CRUD for short) - all relating to the subject of pizza. The user experience is geared towards this, with all functions aimed at implementing or supporting these functions.
 
 ## User stories
 ### A visitor to the site will want to:
@@ -29,7 +33,9 @@ This app serves to provide a space where users can log in to share their pizza r
 
 ---
 
-# UX
+## Design
+
+An outline of design choices on front and back end follows.
 
 ## Colour palette
 
@@ -48,7 +54,7 @@ Dark Sienna will be our back-up colour, and a bit of a wildcard option. Coolors 
 
 ---
 
-# Wireframes
+## Wireframes
 
 Wireframes for this project were created using Balsamiq. All images linked below contain wireframes for mobile, tablet and desktop views.
 
@@ -65,13 +71,13 @@ Wireframes for this project were created using Balsamiq. All images linked below
 
 ---
 
-# Database
+## Database
 
 Below is the physical database model of this project:
 
 ![Database schema](static/images/database/schema.png)
 
-The database itself is a NoSQL database, held on MongoDB. You can see the data types of everything stored in it, and the links point to how the relationships work. For example, when a user creates a recipe, their username is recorded and stored in the "created_by" field. That way ownership can be restricted to one person, and this person is the only user who can edit and delete that recipe other than the site administrator. Likewise, the category chosen by the user is also recorded so that visitors who wish to view recipes in a particular category will find it there. (Note that users are not required to choose a category, merely recommended to do so. The reason for this is that all recipes can be viewed and searched for regardless of whether a category is chosen, and some users may not feel their recipe falls into any of the available categories.)
+The database itself is a non-relational, NoSQL database, held on MongoDB. You can see the data types of everything stored in it, and the links point to how the relationships work. For example, when a user creates a recipe, their username is recorded and stored in the "created_by" field. That way ownership can be restricted to one person, and this person is the only user who can edit and delete that recipe other than the site administrator. Likewise, the category chosen by the user is also recorded so that visitors who wish to view recipes in a particular category will find it there. (Note that users are not required to choose a category, merely recommended to do so. The reason for this is that all recipes can be viewed and searched for regardless of whether a category is chosen, and some users may not feel their recipe falls into any of the available categories.)
 
 Some code below demonstrates how this works:
 
@@ -186,10 +192,12 @@ Another way of getting your own local version to work on is to clone the reposit
 2. Locate the repository (this one).
 3. Click Code, the button just to the left of the green GitPod button.
 4. Click HTTPS to make sure you're in it, then copy the link you see there.
-6. Head into GitPod or your IDE of choice, and open up the terminal.
-5. Switch your working directory to the location you want to the cloned directory created.
-6. Then you want to type "git clone https://github.com/James-VT/MS3_Halo_Pizza", the same URL as before.
-7. Hit Enter. You're good to go!
+6. Head into GitPod or your IDE of choice, and open Git Bash.
+7. The current working directory needs to be changed to the location you want the cloned one to be.
+8. In the CLI, type "git clone" and then the URL you copied earlier.
+9. Press enter. Result!
+
+Don't forget you'll need your own env.py file with your own variables and a MongoDB database to matcbh the one we have above. You'll also need to use something like pip install -r requirements.txt to install all of the required packages from out of the requirements file.
 
 ## Deploying to Heroku:
 Heroku allows us to host Python projects, instead of merely static sites which are all GitHub allows.
@@ -201,17 +209,12 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 5. Enter a name for your app. It must be unique, and contain only letters, numbers and hyphens.
 6. Choose a region. In our case, Europe.
 7. Click "Create app."
-8. Return to your development environment and type, in the terminal "npm install -g heroku"
-9. npm is an abbreviation of "Node Package Manager" and "-g" tells the console that this will be a global installation.
-10. You can now log in to heroku via the CLI at any time by typing heroku login -i and entering your credentials.
-11. You can now click "Open app" on your app's page on heroku to confirm that your app is up and running. Congratulations!
 
 ### Connect your Git repository to Heroku
-1. Head back to your app's page on the Heroku dashboard.
-2. Click settings.
-3. Grab the Heroku git URL
-4. In the console, type "git remote add [your choice of name here; I went with heroku] [your Heroku git url here]".
-5. To make sure this has worked, you can then type "git remote -v" to view what should now be both your git remotes and your heroku ones.
+1. You now want to find the "deploy" tab at the top of the screen.
+2. You want to find "Deployment method" and "GitHub" from in there.
+3. In the search bar, find your GitHub repo.
+4. On the correct repo, click "Connect." DO NOT click to "Enable Automatic Deployment" at this stage. Tried it. Can't recommend.
 
 ### Create your "requirements.txt" file
 1. Heroku uses this to detect which language we're using, and our dependencies.
@@ -234,6 +237,8 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 1. On your project's Heroku page, go to settings and scroll down to "config vars"
 2. Here you can add the information in your env.py file to your Heroku project. The reason you need to do this is that your env.py file, which is listed in your .gitignore, is not pushed to Heroku or GitHub. As such, Heroku does not have access to the information contained within it, which is vital to the running of the project.
 3. Add those environment variables in config vars as key-value pairs.
+4. Remember that "Enable Automatic Deployment" thing I told you not to click? Click it now.
+5. Beneath there, find "Manual Deploy," choose the master branch and click "Deploy Branch."
 4. You should now be able to open your project via the "Open app" button.
 
 ---
@@ -251,6 +256,21 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
     * Flask was used to handle the templating for the site.
 
+* [Flask-PyMongo](https://pypi.org/project/Flask-PyMongo/)
+    * Flask-PyMongo provides MongoDB support for Flask applications.
+
+* [pip](https://pip.pypa.io/en/stable/)
+    * Pip is the package installer for Python, allowing us to install the packages we need for this site.
+
+* [dnspython](https://www.dnspython.org/)
+    * Dnspython is a DNS toolkit for python.
+
+* [FlaskPaginate](https://pythonhosted.org/Flask-paginate/)
+    * FlaskPaginate has provided our extension for pagination.
+
+* [Werkezeug](https://wsgi.readthedocs.io/en/latest/what.html)
+    * Werkzeug is a Web Server Gateway Interface web application library.
+
 * [Jinja](https://www.palletsprojects.com/p/jinja/)
     * Jinja is a templating engine for Python, used to write Flask and other templating services.
 
@@ -266,7 +286,7 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 * [Google Fonts](https://fonts.google.com/)
     * The fonts for the site were imported from Google Fonts. This site uses Roboto and Just Me Again Down Here throughout.
 
-*  [FontAwesome](https://fontawesome.com/)
+* [FontAwesome](https://fontawesome.com/)
     * The icons for social media links were taken from FontAwesome.
 
 * [Coolors](https://coolors.co/)
@@ -277,6 +297,31 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 
 * [Spark Adobe](https://spark.adobe.com/sp/)
     * Spark Adobe is a fremium online service for creating graphics and images. I have used it for the creation of the pizzacardbackground.png image.
+
+* [Heroku](https://devcenter.heroku.com/)
+    * Heroku is where we deploy this live site.
+
+* [MongoDB](https://www.mongodb.com/)
+    * MongoDB is where we host our NoSQL database.
+
+* [GitHub](https://github.com/)
+    * GitHub is where we host our site.
+
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+    * Lighthouse assesses our pages for accessibility, performance and other things.
+
+* [Jigsaw](https://jigsaw.w3.org/css-validator/)
+    * Jigsaw validates our CSS for best practices.
+
+* [JSHint](jshint.com)
+    * JSHint assesses our Javascript for being practices, bugs, and syntax errors.
+
+* [PEP8 Online](http://pep8online.com/)
+    * PEP8 Online checks for errors in out Python code.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/#)
+    * This is where we created the header image for this README.
+
 
 ### Tutorials
 * Code Institute's Task Manager walkthrough project
@@ -295,7 +340,7 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 
 ## Content
 
-Most recipes are taken from [BBC Good Food](https://www.bbcgoodfood.com/). Others are taken from [Tasty.co](https://tasty.co/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
+Most recipes are taken from [BBC Good Food](https://www.bbcgoodfood.com/). Others are taken from [Tasty.co](https://tasty.co/), [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page).
 
 ---
 
