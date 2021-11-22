@@ -605,3 +605,9 @@ As you can see, the upload form scores only 89% for accessibility. This is deepl
 The latter problem is also tedious, as the fields are dynamically generated for extra ingredients and cooking steps. The identical labels on these are causing it to fail, but for the functionality and uploading this is necessary.
 
 ---
+
+### Unable to paginate search results - FIXED VIA WORKAROUND
+
+An irritating bug was found when trying to implement pagination for search results. Our pagination allows for 4 results per page. To see any recipes after those first four, you click to see them via the pagination controls.
+
+However, the creation of the Index page with search results requires a re-sending of the search term. Without this being done, it creates an error. This is hard to implement defensively, as if a user has changed it it will create an error and re-generating the page with the search term in the bar was re-sending the search and landing us back at page one. With more time, a better solution could probably be found but for now, our solution is to create a separate template called searchresults.html and not implement pagination on that page. This ensures an error-free user experience in the mean time.
