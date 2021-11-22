@@ -21,6 +21,8 @@ This website serves to provide a space where users can log in to share their piz
     * [Wireframes](https://github.com/James-VT/MS3_Halo_Pizza#wireframes)
     * [Database](https://github.com/James-VT/MS3_Halo_Pizza#database)
 
+* [Testing](https://github.com/James-VT/MS3_Halo_Pizza#testing)
+
 * [Deployment](https://github.com/James-VT/MS3_Halo_Pizza#deployment)
 
 * [Credits](https://github.com/James-VT/MS3_Halo_Pizza#credits)
