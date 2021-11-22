@@ -124,6 +124,20 @@ Great! Everything's uploaded nicely to the database. A few things to note are th
 |---|---|
 | 2 Upload their own recipes for others to see. | Users can submit recipes to the site via a link visible to logged-in users in the nav bar. The data they upload is stored in MongoDB. |
 
+### Register function
+
+Users can register an account with the site that allows them to upload and edit their recipes. I include this here as it technically "creates" something: an entry in the database.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| Username and password are required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
+| Registering an account | Correctly provide a username and password, then click register | Success - an account is created for the user. |
+| Usernames must be unique, and not match an existing one | Attempt to register with an existing username | Success - the user is presented with a flash message informing them that the username already exists, and the form fails to send. |
+
+| User story goal achieved by this feature | How was this achieved? |
+|---|---|
+| 5 Register with the site to submit recipes. | By the inclusion of a register form |
+
 This mostly concludes the testing for our "create" functionality. What remains now is to test that it uploads properly to the site itself, which we shall do for our "read" testing, which comes next.
 
 ---
@@ -144,7 +158,16 @@ Everything we entered on that form has appeared as part of the recipe. From here
 
 ![Image of a full recipe page for crud testing evidence](docs/testing/featuretesting/crudtesting/readtesting/fullrecipeview.png)
 
-Note that in the above recipe, in the details section one can find the categories, including the information from the checkboxes, and one can also find who owns/uploaded the recipe. More on that when we reach the update testing, which we'll come to next.
+Note that in the above recipe, in the details section one can find the categories, including the information from the checkboxes, and one can also find who owns/uploaded the recipe. More on that when we reach the update testing.
+
+### Browse and view recipes
+
+Users, whether logged in or not, can view recipes on the site.
+
+| Feature | How to test | Result |
+| --- | --- | --- |
+| The ability to browse all recipes from the home page, via a paginated set of recipes. | Visit the home page, see the recipes, click through the pagination. | Success - four to a page, the recipes present themselves to a user. |
+| View a specific recipe | Click on any recipe to view it. | Success - clicking a recipe takes you to a page showing what that recipe is - its steps, its details, its ingredients. |
 
 | User story goal achieved by this feature | How was this achieved? |
 |---|---|
@@ -341,23 +364,19 @@ Result: success! As you can see from the image, where once there were four recip
 
 ---
 
-## Other features
+### Create, edit, and delete categories as an admin
 
-### Register function
-
-Users can register an account with the site that allows them to upload and edit their recipes.
+An admin can create categories by which recipes can be grouped, and subsequently viewed by visitors. This is yet further CRUD functionality, along the same lines as that above, so I include it here in a briefer format to demonstrate the testing of it.
 
 | Feature | How to test | Result |
 | --- | --- | --- |
-| Username and password are required fields and will not accept empty space | Try to submit the form with empty fields | Success - form fails to submit and users are prompted to fill fields. |
-| Registering an account | Correctly provide a username and password, then click register | Success - an account is created for the user. |
-| Usernames must be unique, and not match an existing one | Attempt to register with an existing username | Success - the user is presented with a flash message informing them that the username already exists, and the form fails to send. |
+| Create category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Add category," enter the data for the category you wish to create, and click to confirm. You can then view this new category's entry in the database, and see it on the "Browse categories" page. | Success - a new category is created in the database and on the "Browse categories" page, and is selectable when uploading or editing a recipe. Users also receive a flash message confirming what they've done. |
+| Edit category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Edit category" from any category, alter the data for the category you wish to change, and click to confirm. You can then view this category's updated entry in the database, and see its changes on the "Browse categories" page. | Success - the changes are visible in the category's name and/or description, and in the database. Action confirmed to user via flash message. |
+| Delete category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Delete category" from any category, and click the button in the modal to confirm. This entry is then permanently removed from the database. | Success - the category is gone from the database. Action confirmed to user via flash message. |
 
-| User story goal achieved by this feature | How was this achieved? |
-|---|---|
-| 5 Register with the site to submit recipes. | By the inclusion of a register form |
 
----
+## Other features
+
 
 ### Log in function
 
@@ -370,26 +389,15 @@ Users with accounts can log in to the site after having been away from it.
 
 ---
 
-### Browse and view recipes
+### Search function
 
-Users, whether logged in or not, can view recipes on the site.
+The site features a search bar on its home page, by which users can search for keywords in certain sections of the site. For example, below is an image of the search bar with the word "egg" typed into it.
 
-| Feature | How to test | Result |
-| --- | --- | --- |
-| The ability to browse all recipes from the home page, via a paginated set of recipes. | Visit the home page, see the recipes, click through the pagination. | Success - four to a page, the recipes present themselves to a user. |
-| View a specific recipe | Click on any recipe to view it. | Success - clicking a recipe takes you to a page showing what that recipe is - its steps, its details, its ingredients. |
+![Image of search bar with egg typed into it.](docs/testing/featuretesting/crudtesting/locatetesting/eggsearchbar.png)
 
-### Create, edit, and delete categories as an admin
+I can test this works by clicking the "search" button. (The reset button clears the entry and refreshes the page. This can be testing by clicking it.) If I click the search button, here's what I am presented with:
 
-An admin can create categories by which recipes can be grouped, and subsequently viewed by visitors.
-
-| Feature | How to test | Result |
-| --- | --- | --- |
-| Create category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Add category," enter the data for the category you wish to create, and click to confirm. You can then view this new category's entry in the database, and see it on the "Browse categories" page. | Success - a new category is created in the database and on the "Browse categories" page, and is selectable when uploading or editing a recipe. Users also receive a flash message confirming what they've done. |
-| Edit category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Edit category" from any category, alter the data for the category you wish to change, and click to confirm. You can then view this category's updated entry in the database, and see its changes on the "Browse categories" page. | Success - the changes are visible in the category's name and/or description, and in the database. Action confirmed to user via flash message. |
-| Delete category | As admin, click "Browse categories." Buttons will be visible to you in here that are not visible to visitors. Click "Delete category" from any category, and click the button in the modal to confirm. This entry is then permanently removed from the database. | Success - the category is gone from the database. Action confirmed to user via flash message. |
-
----
+![Image of egg search results]()
 
 # Testing against user stories
 
