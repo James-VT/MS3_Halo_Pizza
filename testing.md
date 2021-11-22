@@ -425,7 +425,7 @@ View by category page
 
 View recipe page
 
-![View recipe pasge validator evidence](docs/testing/validators/recipepagelighthouse.png)
+![View recipe page validator evidence](docs/testing/validators/recipepagelighthouse.png)
 
 ---
 
