@@ -10,10 +10,6 @@
             <p>All recipes created by you can be seen here. If you wish to edit or delete anything, click on the recipe card and
                 you can make changes from the recipe page.</p>
         {% endif %}
-        {% if session.user|lower == "admin"|lower %}
-            <p class="admin-notice">As admin, you can view all recipes and make changes to these as required from the recipes'
-            pages.</p>
-        {% endif %}
         {% if recipes|length == 0 %}
             <p>It looks like you haven't uploaded any recipes yet. If you'd like to do so, click on "submit a recipe" in the navigation bar above.</p>
         {% endif %}
