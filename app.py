@@ -290,7 +290,8 @@ def edit_recipe(recipe_id):
             "is_vegetarian": is_vegetarian,
             "is_vegan": is_vegan,
             "is_gluten_free": is_gluten_free,
-            "is_dairy_free": is_dairy_free
+            "is_dairy_free": is_dairy_free,
+            "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe successfully updated!")
