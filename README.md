@@ -343,7 +343,7 @@ Similarly, users are required to use a password when they sign up. The minimum l
     * Spark Adobe is a fremium online service for creating graphics and images. I have used it for the creation of the pizzacardbackground.png image.
 
 * [Heroku](https://devcenter.heroku.com/)
-    * Heroku is where we deploy this live site.
+    * Heroku is where we deploy this live site. Throughout, we have ensured the version being deployed to Heroku matches our development version by checking features and screen layouts on both versions. After the workspace was lost twice, we've got quite good at this!
 
 * [MongoDB](https://www.mongodb.com/)
     * MongoDB is where we host our NoSQL database.
