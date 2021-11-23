@@ -211,6 +211,7 @@ def delete_user(username):
         mongo.db.recipes.remove(recipe)
     mongo.db.users.remove({"username": username})
     flash("Your account and recipes have been deleted")
+    session.pop("user")
     return redirect(url_for("login"))
 
 
