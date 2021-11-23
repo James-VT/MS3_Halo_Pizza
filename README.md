@@ -279,6 +279,14 @@ Heroku allows us to host Python projects, instead of merely static sites which a
 
 ---
 
+## Security
+
+As mentioned in the section above, our project involves secret keys for the sucessful melding of GitHub, Heroku and MongoDB with the development environment. This is done via a local env.py that is listed in our .gitignore file and is thus not committed to the repository. Our password and database name are also contained in there.
+
+Similarly, users are required to use a password when they sign up. The minimum length for this password is five, and the maximum is fifteen. These passwords are hashed by using "generate_password_hash" from the werkzeug.security library from Python. Hashed passwords are then checked against each other when a user attempts to log in.
+
+---
+
 ## Credits
 
 ### Technologies used
