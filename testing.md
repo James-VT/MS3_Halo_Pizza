@@ -514,6 +514,12 @@ PEP8 is a standard by which Python code can be measured for consistent standards
 
 ---
 
+## Responsiveness
+
+This site features many media queries to allow it to appear consistently at all screen sizes. I have done this using dev tools (to do this, right click on any page, click Inspect, then along the new bar at the top of the page select the device you'd like to emulate or select responsive and then click and drag the sides), my own two monitors, two separate desktop monitors at work and my Samsung Galaxy S5. To assist in ensuring continuity across browsers, I have enlisted the help of AutoPrefixer (credit in Technologies Used).
+
+--- 
+
 ## Bugs
 
 ### Navbar on two lines - FIXED
