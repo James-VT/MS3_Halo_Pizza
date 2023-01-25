@@ -1,10 +1,9 @@
 # Halo Pizza
 
-# *** DEPRECATED ***
 
 ![Image of mock-ups to test site's responsiveness](static/images/mockups.png)
 
-The live site for the Halo Pizza Club can  be found [here](https://ms3-halo-pizza.herokuapp.com/). Or at least, it could be found there before Heroku started charging a premium for site hosting, even for students. Sorry pizza-lovers, no website at present.
+The live site for the Halo Pizza Club can  be found [here](https://ms3-halo-pizza.onrender.com).
 
 # Project overview
 This website serves to provide a space where users can log in to share their pizza recipes, view other users' submitted recipes, and edit recipes they have submitted. The site requires users to log in to submit and edit recipes, and features authentication to securely facilitate this. A visitor to the site will be visiting for one of two basic reasons: to find information on pizza recipes or to share it. The functions of the site facilitate this. The owner of the site will have similar goals, but with a slight lean towards curation of these recipes. To this end, a site owner will have control of the categorisation of recipes and the ability to edit those of other users if necessary.
@@ -76,7 +75,7 @@ The colour palette for this project was generated using Coolors (credited in the
 ![Coolors palette for Halo Pizza](docs/coolors.png)
 
 ### Wheat, Venetian Red, Pakistan Green:
-These three were chosen to loosely resemble colours associated with pizza. Although they aren't exact matches for pizza dough, passata or green peppers I've chosen them as much for contrast and continuity with each other as I have for accuracy.
+These three were chosen to loosely resemble colours associated with pizza. Although they aren't exact matches for pizza dough, passata or green peppers, I've chosen them as much for contrast and continuity with each other as I have for accuracy.
 
 ### Eerie Black:
 This will be our font colour, though where necessity dictates default black can be used, particularly if displaying text over the last colour.
